@@ -110,7 +110,8 @@ body {
     "Helvetica Neue",
     Arial;
 }
-html {
+html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -626,6 +627,23 @@ html {
   flex-direction: row;
   align-items: flex-start;
   gap: 24px;
+}
+
+.steps-scroll {
+  display: none;
+  height: 4px;
+  background: #dcdcdc;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.steps-scroll::before {
+  content: "";
+  display: block;
+  width: 230px;
+  height: 100%;
+  background: #2053ac;
+  border-radius: 50px;
 }
 
 .step-card {
