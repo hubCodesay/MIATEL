@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <title>Miаtel — Header demo</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="img/logo_horizontal.png"
+            alt="miatel"
+            class="logo-img" />
+        </div>
+
+        <div class="controls">
+          <button
+            class="icon-btn"
+            aria-label="menu">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden>
+              <rect
+                x="3"
+                y="5"
+                width="18"
+                height="2"
+                rx="1"
+                fill="none"
+                stroke="#F2F2F2"
+                stroke-width="2" />
+              <rect
+                x="3"
+                y="11"
+                width="18"
+                height="2"
+                rx="1"
+                fill="none"
+                stroke="#F2F2F2"
+                stroke-width="2" />
+              <rect
+                x="3"
+                y="17"
+                width="18"
+                height="2"
+                rx="1"
+                fill="none"
+                stroke="#F2F2F2"
+                stroke-width="2" />
+            </svg>
+          </button>
+          <button
+            class="lang"
+            aria-label="language">
+            <span class="lang-text">RU</span>
+            <svg
+              class="chev"
+              width="12"
+              height="8"
+              viewBox="0 0 12 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden>
+              <path
+                d="M1 1L6 6L11 1"
+                stroke="#F2F2F2"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="primary">
+            <span class="text">Связаться</span>
+            <!-- User-provided phone SVG (19x19) -->
+            <svg
+              class="phone"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden>
+              <path
+                d="M3 1H7L9 6L6.5 7.5C7.57096 9.67153 9.32847 11.429 11.5 12.5L13 10L18 12V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18C12.0993 17.763 8.42015 16.1065 5.65683 13.3432C2.8935 10.5798 1.23705 6.90074 1 3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1Z"
+                stroke="#F2F2F2"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-card">
+            <div class="hero-content">
+              <h1 class="hero-title">
+                <span>Выгодная</span>
+                <span class="hero-accent">корпоративная</span>
+                <span class="hero-accent">связь</span>
+                <span>в Чехии</span>
+              </h1>
+              <p class="hero-text">
+                Подключаем бизнес (и не только) к стабильной мобильной сети с
+                поддержкой на русском. Без бюрократии, без переплат, с личным
+                менеджером в Праге. Работаем официально в Чехии — партнёр
+                национального оператора связи!
+              </p>
+              <div class="hero-actions">
+                <button class="hero-btn hero-primary">
+                  <span>Рассчитать тариф</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden>
+                    <path
+                      d="M5 12H19"
+                      stroke="#F2F2F2"
+                      stroke-width="2"
+                      stroke-linecap="round" />
+                    <path
+                      d="M13 6L19 12L13 18"
+                      stroke="#F2F2F2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+
+                <div class="hero-telegram">
+                  <button class="hero-btn hero-ghost">
+                    Написать в Telegram
+                  </button>
+                  <button
+                    class="hero-btn hero-circle"
+                    aria-label="Telegram">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden>
+                      <path
+                        d="M21 4L3 11L9 13L11 20L15 15L20 18L21 4Z"
+                        stroke="#F2F2F2"
+                        stroke-width="2"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="hero-blob"></div>
+              <img
+                src="img/persone.png"
+                alt="Персонаж"
+                class="hero-image" />
+            </div>
+
+            <button
+              class="hero-scroll"
+              aria-label="scroll">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden>
+                <path
+                  d="M12 5V19"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                  stroke-linecap="round" />
+                <path
+                  d="M6 13L12 19L18 13"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="container">
+          <div class="about">
+            <img
+              class="about-image"
+              src="img/1.png"
+              alt="Декоративное изображение"
+              aria-hidden="true" />
+
+            <div class="about-content">
+              <div class="about-title">
+                <div class="about-title-row">
+                  <h2 class="about-title-text">О Miatel</h2>
+                </div>
+              </div>
+
+              <p class="about-copy">
+                Miatel — сервис связи и партнёр одного из крупнейших операторов
+                Чехии, созданный для предпринимателей и физлиц, которые работают
+                и живут здесь. Мы помогаем компаниям подключать офисы,
+                сотрудников и филиалы к надёжной мобильной сети — быстро,
+                легально и без языкового барьера.
+                <br /><br />
+                Наши тарифы выгоднее ваших текущих условий. Гарантируем!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="advantages-section">
+        <div class="container">
+          <div class="advantages">
+            <div class="advantages-title">
+              <h2 class="advantages-h2">Почему компании выбирают Miatel?</h2>
+              <p class="advantages-subtitle">Наши преимущества</p>
+            </div>
+
+            <div class="advantages-grid">
+              <div class="adv-col">
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_90362_166)">
+                        <path
+                          d="M10 8H18L22 18L17 21C19.1419 25.3431 22.6569 28.8581 27 31L30 26L40 30V38C40 39.0609 39.5786 40.0783 38.8284 40.8284C38.0783 41.5786 37.0609 42 36 42C28.1985 41.5259 20.8403 38.213 15.3137 32.6863C9.78701 27.1597 6.4741 19.8015 6 12C6 10.9391 6.42143 9.92172 7.17157 9.17157C7.92172 8.42143 8.93913 8 10 8Z"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M30 14V14.02"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M36 14V14.02"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M42 14V14.02"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_90362_166">
+                          <rect
+                            width="48"
+                            height="48"
+                            fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">Многоязычная поддержка 24/7</h3>
+                    <p class="adv-desc">
+                      Говорим с вами на одном языке — в прямом смысле.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 42V38C12 35.8783 12.8429 33.8434 14.3431 32.3431C15.8434 30.8429 17.8783 30 20 30H25M38.002 42C36.9411 42 35.9237 41.5786 35.1736 40.8284C34.4234 40.0783 34.002 39.0609 34.002 38C34.002 36.9391 34.4234 35.9217 35.1736 35.1716C35.9237 34.4214 36.9411 34 38.002 34M38.002 42C39.0629 42 40.0803 41.5786 40.8304 40.8284C41.5806 40.0783 42.002 39.0609 42.002 38C42.002 36.9391 41.5806 35.9217 40.8304 35.1716C40.0803 34.4214 39.0629 34 38.002 34M38.002 42V45M38.002 34V31M44.064 34.5L41.466 36M34.54 40L31.94 41.5M31.94 34.5L34.54 36M41.466 40L44.066 41.5M16 14C16 16.1217 16.8429 18.1566 18.3431 19.6569C19.8434 21.1571 21.8783 22 24 22C26.1217 22 28.1566 21.1571 29.6569 19.6569C31.1571 18.1566 32 16.1217 32 14C32 11.8783 31.1571 9.84344 29.6569 8.34315C28.1566 6.84285 26.1217 6 24 6C21.8783 6 19.8434 6.84285 18.3431 8.34315C16.8429 9.84344 16 11.8783 16 14Z"
+                        stroke="#5386DF"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">
+                      Индивидуальные условия даже внутри одной команды
+                    </h3>
+                    <p class="adv-desc">
+                      Грамотно подбираем услуги без переплат.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="adv-col adv-col--offset">
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_90362_214)">
+                        <path
+                          d="M8 14C8 12.9391 8.42143 11.9217 9.17157 11.1716C9.92172 10.4214 10.9391 10 12 10H36C37.0609 10 38.0783 10.4214 38.8284 11.1716C39.5786 11.9217 40 12.9391 40 14V38C40 39.0609 39.5786 40.0783 38.8284 40.8284C38.0783 41.5786 37.0609 42 36 42H12C10.9391 42 9.92172 41.5786 9.17157 40.8284C8.42143 40.0783 8 39.0609 8 38V14Z"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M32 6V14Z"
+                          fill="#5386DF" />
+                        <path
+                          d="M32 6V14"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M16 6V14"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M8 22H40"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M22 30H24"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M24 30V36"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_90362_214">
+                          <rect
+                            width="48"
+                            height="48"
+                            fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">Подключение <br />за 1 день</h3>
+                    <p class="adv-desc">Без очередей и бумажной волокиты.</p>
+                  </div>
+                </article>
+
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M29.5991 17.9999C29.2368 17.3715 28.7104 16.8534 28.0763 16.5011C27.4422 16.1488 26.7241 15.9755 25.9991 15.9999H23.9991L23.9991 11.9999M18.3591 18.3419C18.0816 18.9513 17.9615 19.6205 18.0097 20.2883C18.058 20.9561 18.2731 21.601 18.6354 22.1641C18.9976 22.7272 19.4954 23.1903 20.0831 23.5111C20.6708 23.8318 21.3296 23.9999 21.9991 23.9999H23.9991M29.6471 29.6439C29.3305 30.3462 28.8178 30.9422 28.1707 31.3601C27.5236 31.778 26.7695 32.0002 25.9991 31.9999H21.9991C21.2741 32.0244 20.5561 31.8511 19.922 31.4988C19.2878 31.1465 18.7614 30.6284 18.3991 29.9999M40.0832 32.0899C41.7872 28.7077 42.381 24.8741 41.7801 21.1348C41.1791 17.3955 39.4141 13.9411 36.7361 11.2631C34.0581 8.58506 30.6036 6.81998 26.8643 6.21903C23.125 5.61808 19.2914 6.21189 15.9092 7.91595M11.2732 11.2699C9.57905 12.9361 8.23156 14.9211 7.30844 17.1106C6.38532 19.3001 5.90483 21.6506 5.8947 24.0267C5.88456 26.4028 6.34497 28.7574 7.24937 30.9547C8.15377 33.152 9.48427 35.1485 11.1641 36.829C12.844 38.5095 14.8399 39.8408 17.0368 40.746C19.2337 41.6513 21.5882 42.1126 23.9643 42.1034C26.3404 42.0942 28.6911 41.6146 30.881 40.6924C33.0708 39.7701 35.0564 38.4234 36.7232 36.7299M23.9991 31.9999V35.9999M5.99915 5.99995L41.9991 42"
+                        stroke="#5386DF"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">Без скрытых платежей</h3>
+                    <p class="adv-desc">Все условия прозрачны с первого дня.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="adv-col">
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_90362_105)">
+                        <path
+                          d="M8 28V22C8 17.7565 9.68571 13.6869 12.6863 10.6863C15.6869 7.68571 19.7565 6 24 6C28.2435 6 32.3131 7.68571 35.3137 10.6863C38.3143 13.6869 40 17.7565 40 22V28"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M36 38C36 41.314 30.628 44 24 44"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M8 28C8 26.9391 8.42143 25.9217 9.17157 25.1716C9.92172 24.4214 10.9391 24 12 24H14C15.0609 24 16.0783 24.4214 16.8284 25.1716C17.5786 25.9217 18 26.9391 18 28V34C18 35.0609 17.5786 36.0783 16.8284 36.8284C16.0783 37.5786 15.0609 38 14 38H12C10.9391 38 9.92172 37.5786 9.17157 36.8284C8.42143 36.0783 8 35.0609 8 34V28Z"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path
+                          d="M30 28C30 26.9391 30.4214 25.9217 31.1716 25.1716C31.9217 24.4214 32.9391 24 34 24H36C37.0609 24 38.0783 24.4214 38.8284 25.1716C39.5786 25.9217 40 26.9391 40 28V34C40 35.0609 39.5786 36.0783 38.8284 36.8284C38.0783 37.5786 37.0609 38 36 38H34C32.9391 38 31.9217 37.5786 31.1716 36.8284C30.4214 36.0783 30 35.0609 30 34V28Z"
+                          stroke="#5386DF"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_90362_105">
+                          <rect
+                            width="48"
+                            height="48"
+                            fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">
+                      Персональный менеджер всегда <br />на связи
+                    </h3>
+                    <p class="adv-desc">
+                      Прямой контакт в удобном для вас формате.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="adv-card">
+                  <div
+                    class="adv-icon"
+                    aria-hidden="true">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 36V30M20 36V24M28 36V18M36 36V12"
+                        stroke="#5386DF"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+
+                  <div class="adv-text">
+                    <h3 class="adv-title">Гарантированное качество связи</h3>
+                    <p class="adv-desc">
+                      Стабильные SIP-каналы и проверенная инфраструктура без
+                      обрывов и неожиданностей.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps-section">
+        <div class="container">
+          <div class="steps">
+            <div class="steps-title">
+              <h2 class="steps-h2">Прозрачное подключение в 4 шага</h2>
+              <p class="steps-subtitle">Как мы работаем</p>
+            </div>
+
+            <div class="steps-grid">
+              <article class="step-card">
+                <p class="step-kicker">Шаг 1</p>
+                <h3 class="step-title">Вы оставляете заявку</h3>
+                <p class="step-desc">
+                  Choose your favorite tracks and upload them to our platform.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <p class="step-kicker">Шаг 2</p>
+                <h3 class="step-title">
+                  Мы перезваниваем и назначаем встречу — онлайн или лично
+                </h3>
+                <p class="step-desc">
+                  Choose your favorite tracks and upload them to our platform.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <p class="step-kicker">Шаг 3</p>
+                <h3 class="step-title">Готовим индивидуальное предложение</h3>
+                <p class="step-desc">
+                  Choose your favorite tracks and upload them to our platform.
+                </p>
+              </article>
+
+              <article class="step-card">
+                <p class="step-kicker">Шаг 4</p>
+                <h3 class="step-title">
+                  Подписываем договор и согласовываем дату перехода
+                </h3>
+                <p class="step-desc">
+                  Choose your favorite tracks and upload them to our platform.
+                </p>
+              </article>
+            </div>
+
+            <button class="steps-cta">
+              <span class="steps-cta-text">Получить предложение</span>
+              <svg
+                class="steps-cta-arrow"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden>
+                <path
+                  d="M5 12H19"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                  stroke-linecap="round" />
+                <path
+                  d="M13 6L19 12L13 18"
+                  stroke="#F2F2F2"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

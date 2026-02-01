@@ -1,0 +1,975 @@
+/* Responsive overrides */
+
+/* Fluid scaling below the 1680 baseline (desktop/tablet landscape) */
+@media (max-width: 1679px) and (min-width: 769px) {
+  .container {
+    padding-left: clamp(16px, 1.8vw, 30px);
+    padding-right: clamp(16px, 1.8vw, 30px);
+  }
+
+  .header-container {
+    padding-left: clamp(16px, 1.8vw, 30px);
+    padding-right: clamp(16px, 1.8vw, 30px);
+    height: clamp(64px, 4.76vw, 80px);
+  }
+
+  .logo-img {
+    width: clamp(110px, 8.49vw, 142.6px);
+    height: auto;
+  }
+
+  .primary {
+    height: clamp(44px, 2.86vw, 48px);
+    border-radius: clamp(14px, 0.95vw, 16px);
+  }
+
+  .icon-btn {
+    width: clamp(44px, 2.86vw, 48px);
+    height: clamp(44px, 2.86vw, 48px);
+    border-radius: clamp(14px, 0.95vw, 16px);
+  }
+
+  .about-section {
+    padding-bottom: clamp(48px, 4.76vw, 80px);
+  }
+
+  .about {
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    min-height: clamp(560px, 41vw, 689px);
+  }
+
+  .about-content {
+    gap: clamp(72px, 7.68vw, 129px);
+    padding-top: clamp(8px, 0.9vw, 15px);
+  }
+
+  .about-title-text {
+    font-size: clamp(24px, 1.9vw, 32px);
+  }
+
+  .about-copy {
+    font-size: clamp(34px, 2.86vw, 48px);
+    letter-spacing: clamp(-2.8px, -0.17vw, -1px);
+  }
+
+  .advantages-section {
+    padding-bottom: clamp(48px, 4.76vw, 80px);
+  }
+
+  .advantages {
+    gap: clamp(32px, 3.8vw, 64px);
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+  }
+
+  .advantages-title {
+    gap: clamp(10px, 1vw, 16px);
+  }
+
+  .advantages-h2 {
+    font-size: clamp(40px, 3.8vw, 64px);
+  }
+
+  .advantages-subtitle {
+    font-size: clamp(22px, 1.9vw, 32px);
+  }
+
+  .advantages-grid {
+    gap: clamp(14px, 1.4vw, 24px);
+  }
+
+  .adv-col {
+    flex: 1 1 clamp(260px, 31vw, 536.8px);
+    width: auto;
+    max-width: 536.8px;
+    gap: clamp(14px, 1.4vw, 24px);
+  }
+
+  .adv-col--offset {
+    padding-top: clamp(28px, 3.8vw, 64px);
+  }
+
+  .adv-card {
+    min-height: clamp(320px, 24vw, 400px);
+    padding: clamp(16px, 1.4vw, 24px);
+    gap: clamp(14px, 1.4vw, 24px);
+    border-radius: clamp(12px, 0.95vw, 16px);
+  }
+
+  .adv-icon {
+    width: clamp(84px, 7.14vw, 120px);
+    height: clamp(84px, 7.14vw, 120px);
+    border-radius: clamp(72px, 5.7vw, 96px);
+  }
+
+  .adv-title {
+    font-size: clamp(32px, 2.86vw, 48px);
+  }
+
+  .adv-desc {
+    font-size: clamp(16px, 1.19vw, 20px);
+  }
+
+  .steps {
+    padding-top: clamp(48px, 3.81vw, 64px);
+    padding-bottom: clamp(48px, 3.81vw, 64px);
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    gap: clamp(40px, 3.81vw, 64px);
+  }
+
+  .steps-title {
+    max-width: clamp(760px, 62.9vw, 1057px);
+    gap: clamp(12px, 0.95vw, 16px);
+  }
+
+  .steps-h2 {
+    font-size: clamp(44px, 3.81vw, 64px);
+  }
+
+  .steps-subtitle {
+    font-size: clamp(24px, 1.9vw, 32px);
+  }
+
+  .steps-grid {
+    gap: clamp(16px, 1.43vw, 24px);
+  }
+
+  .step-card {
+    height: clamp(236px, 16.43vw, 276px);
+    padding: clamp(16px, 1.43vw, 24px);
+    gap: clamp(16px, 1.43vw, 24px);
+    border-radius: clamp(12px, 0.95vw, 16px);
+  }
+
+  .step-kicker {
+    font-size: clamp(16px, 1.19vw, 20px);
+  }
+
+  .step-title {
+    font-size: clamp(22px, 1.3vw, 32px);
+  }
+
+  .step-desc {
+    font-size: clamp(16px, 1.13vw, 20px);
+  }
+
+  .steps-cta {
+    width: clamp(280px, 21.13vw, 355px);
+    height: clamp(60px, 4.29vw, 72px);
+    padding: 0;
+    border-radius: clamp(12px, 0.95vw, 16px);
+  }
+
+  .steps-cta-text {
+    font-size: clamp(18px, 1.43vw, 24px);
+    line-height: clamp(18px, 1.43vw, 24px);
+  }
+}
+
+/* Slightly smaller Advantages below 1600px */
+@media (max-width: 1599px) and (min-width: 769px) {
+  .advantages {
+    gap: clamp(28px, 3.3vw, 56px);
+  }
+
+  .advantages-h2 {
+    font-size: clamp(38px, 3.6vw, 60px);
+  }
+
+  .advantages-subtitle {
+    font-size: clamp(20px, 1.8vw, 30px);
+  }
+
+  .advantages-grid {
+    gap: clamp(12px, 1.25vw, 20px);
+  }
+
+  .adv-col {
+    max-width: 520px;
+  }
+
+  .adv-card {
+    min-height: clamp(300px, 22vw, 380px);
+    padding: clamp(14px, 1.3vw, 22px);
+  }
+
+  .adv-icon {
+    width: clamp(76px, 3.8vw, 112px);
+    height: clamp(76px, 3.8vw, 112px);
+  }
+
+  .adv-title {
+    font-size: clamp(28px, 2.7vw, 44px);
+  }
+
+  .adv-desc {
+    font-size: clamp(15px, 1.15vw, 19px);
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 721px) {
+  .header-container {
+    padding: 12px 5vw;
+  }
+
+  .container {
+    padding: 0 5vw;
+  }
+
+  .logo-img {
+    width: 110px;
+    height: 24px;
+  }
+
+  .primary {
+    min-width: 120px;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 48px 32px;
+  }
+
+  .hero-visual {
+    order: 2;
+  }
+
+  .hero-blob {
+    width: 480px;
+    height: 480px;
+  }
+
+  .hero-image {
+    width: 420px;
+  }
+
+  .hero-title {
+    font-size: 64px;
+  }
+
+  .hero-text {
+    font-size: 24px;
+  }
+
+  .hero-primary,
+  .hero-ghost {
+    width: auto;
+    min-width: 240px;
+  }
+
+  .about {
+    min-height: 520px;
+    padding: 0 5vw;
+    gap: 64px;
+  }
+
+  .about-image {
+    width: 720px;
+    height: 720px;
+    margin-left: -160px;
+    margin-top: 12px;
+  }
+
+  .about-copy {
+    width: 620px;
+    font-size: 40px;
+    height: auto;
+  }
+}
+
+/* Tablet uses mobile container width (content 398px) */
+@media (max-width: 768px) and (min-width: 431px) {
+  .header-container {
+    max-width: 430px;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 12px;
+  }
+
+  .container {
+    max-width: 430px;
+    padding: 0 16px;
+  }
+
+  .logo-img {
+    width: 90px;
+    height: 22px;
+  }
+
+  .lang {
+    width: auto;
+    height: 40px;
+    padding: 8px 10px;
+  }
+
+  .primary {
+    min-width: auto;
+    height: 40px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .primary .text {
+    display: none;
+  }
+
+  .hero-card {
+    width: 398px;
+    max-width: 398px;
+    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    height: auto;
+    min-height: 1128px;
+    padding: 37px 18px 24px;
+    border-radius: 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-top: 0;
+    gap: 24px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    gap: 0;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 120%;
+    margin-top: 0;
+    letter-spacing: 0;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .hero-primary {
+    width: min(252px, 100%);
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .hero-telegram {
+    width: 100%;
+    gap: 0;
+  }
+
+  .hero-ghost {
+    width: min(245px, 100%);
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .hero-circle {
+    width: 72px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 40px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-image {
+    width: 587px;
+    max-width: none;
+    transform: none;
+    margin-top: 0;
+    margin-left: -56px;
+  }
+
+  .hero-scroll {
+    position: static;
+    margin-top: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: var(--muted);
+    align-self: flex-start;
+  }
+
+  .about-section {
+    padding: 0 0 48px;
+  }
+
+  .about {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 16px;
+  }
+
+  .about-content {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .about-image {
+    width: 520px;
+    height: 520px;
+    margin-left: -180px;
+    margin-right: -520px;
+    margin-top: 12px;
+  }
+
+  .about-title-text {
+    font-size: 24px;
+  }
+
+  .about-copy {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+    padding-left: 0;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -1px;
+  }
+
+  .advantages-section {
+    margin-top: 0;
+    padding: 0 0 48px;
+  }
+
+  .advantages-section::before {
+    left: -309.95px;
+    top: 15.74px;
+    transform: rotate(40.03deg);
+  }
+
+  .advantages {
+    gap: 32px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .advantages-title {
+    max-width: 398px;
+    gap: 16px;
+  }
+
+  .advantages-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .advantages-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .advantages-grid {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .adv-col {
+    width: 100%;
+    flex: 0 0 auto;
+    gap: 12px;
+  }
+
+  .adv-col--offset {
+    padding-top: 0;
+  }
+
+  .adv-card {
+    min-height: 198px;
+    padding: 8px;
+    gap: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(242, 242, 242, 0.12);
+    box-shadow: none;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .adv-card::before {
+    opacity: 0;
+  }
+
+  .adv-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 38.4px;
+  }
+
+  .adv-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .adv-text {
+    max-width: 382px;
+    gap: 8px;
+  }
+
+  .adv-title {
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .adv-desc {
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 400;
+  }
+
+  .steps {
+    padding: 64px 0;
+    gap: 32px;
+  }
+
+  .steps-title {
+    max-width: 398px;
+    gap: 12px;
+  }
+
+  .steps-h2 {
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.5px;
+  }
+
+  .steps-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .steps-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-card {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .step-kicker {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .step-title {
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.5px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .steps-cta {
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .steps-cta-text {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+/* Mobile (exact) */
+@media (max-width: 430px) {
+  .header-container {
+    padding: 8px 14px;
+    gap: 10px;
+    height: 64px;
+    border-radius: 16px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo-img {
+    width: 142.6px;
+    height: 32px;
+  }
+
+  .lang {
+    width: 81px;
+    height: 40px;
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .primary {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #2053ac;
+  }
+
+  .primary .text {
+    display: none;
+  }
+
+  .primary .phone {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--muted);
+    order: 3;
+  }
+
+  .lang {
+    order: 1;
+  }
+
+  .primary {
+    order: 2;
+  }
+
+  .icon-btn {
+    order: 3;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-section {
+    padding: 0 0 24px;
+  }
+
+  .hero-card {
+    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    min-height: 1128px;
+    padding: 37px 18px 24px;
+    border-radius: 20px;
+  }
+
+  .hero-content {
+    max-width: 362px;
+    margin-top: 0;
+    gap: 24px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    gap: 0;
+  }
+
+  .hero-text {
+    font-size: 20px;
+    line-height: 120%;
+    margin-top: 0;
+    letter-spacing: 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .hero-primary {
+    width: 252px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .hero-telegram {
+    gap: 0;
+  }
+
+  .hero-ghost {
+    width: 245px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .hero-circle {
+    width: 72px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 40px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-image {
+    width: 587px;
+    transform: none;
+    margin-top: 0;
+    margin-left: -56px;
+  }
+
+  .hero-scroll {
+    position: static;
+    margin-top: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: var(--muted);
+    align-self: flex-start;
+  }
+
+  .about-section {
+    padding: 0 0 48px;
+  }
+
+  .about {
+    padding: 0 16px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .about-image {
+    width: 520px;
+    height: 520px;
+    margin-left: -180px;
+    margin-right: -520px;
+    margin-top: 12px;
+  }
+
+  .about-title-text {
+    font-size: 24px;
+  }
+
+  .about-copy {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -1px;
+    padding: 0;
+  }
+
+  .advantages-section {
+    margin-top: 0;
+    padding: 0 0 48px;
+  }
+
+  .advantages-section::before {
+    left: -309.95px;
+    top: 15.74px;
+    transform: rotate(40.03deg);
+  }
+
+  .advantages {
+    gap: 32px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .advantages-title {
+    max-width: 398px;
+    gap: 16px;
+  }
+
+  .advantages-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .advantages-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .advantages-grid {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .adv-col {
+    width: 100%;
+    flex: 0 0 auto;
+    gap: 12px;
+  }
+
+  .adv-col--offset {
+    padding-top: 0;
+  }
+
+  .adv-card {
+    min-height: 198px;
+    padding: 8px;
+    gap: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(242, 242, 242, 0.12);
+    box-shadow: none;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .adv-card::before {
+    opacity: 0;
+  }
+
+  .adv-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 38.4px;
+  }
+
+  .adv-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .adv-text {
+    max-width: 382px;
+    gap: 8px;
+  }
+
+  .adv-title {
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .adv-desc {
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 400;
+  }
+
+  .steps {
+    padding: 64px 0;
+    gap: 32px;
+  }
+
+  .steps-title {
+    max-width: 398px;
+    gap: 12px;
+  }
+
+  .steps-h2 {
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.5px;
+  }
+
+  .steps-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .steps-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-card {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .step-kicker {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .step-title {
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.5px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .steps-cta {
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .steps-cta-text {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
