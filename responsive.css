@@ -111,6 +111,83 @@
     font-size: clamp(16px, 1.19vw, 20px);
   }
 
+  .audience-section {
+    padding-bottom: clamp(60px, 5.95vw, 100px);
+  }
+
+  .audience {
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    gap: clamp(32px, 3.81vw, 64px);
+    min-height: clamp(560px, 49vw, 824px);
+  }
+
+  .audience-left {
+    flex: 0 0 clamp(360px, 40vw, 677px);
+    width: auto;
+  }
+
+  .audience-title {
+    width: auto;
+    gap: clamp(12px, 0.95vw, 16px);
+  }
+
+  .audience-h2 {
+    font-size: clamp(44px, 3.81vw, 64px);
+  }
+
+  .audience-subtitle {
+    font-size: clamp(24px, 1.9vw, 32px);
+  }
+
+  .audience-image {
+    width: 100%;
+    max-width: 677px;
+  }
+
+  .audience-grid {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: 967px;
+    gap: clamp(14px, 1.4vw, 24px);
+  }
+
+  .audience-grid .audience-card {
+    width: clamp(320px, 27.9vw, 470.8px);
+    height: clamp(300px, 23.8vw, 400px);
+  }
+
+  .faq {
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    gap: clamp(32px, 3.81vw, 64px);
+    min-height: clamp(320px, 28vw, 412px);
+  }
+
+  .faq-title {
+    flex: 0 0 clamp(360px, 40vw, 677px);
+    width: auto;
+  }
+
+  .faq-h2 {
+    font-size: clamp(44px, 3.81vw, 64px);
+  }
+
+  .faq-list {
+    width: auto;
+    max-width: 967px;
+  }
+
+  .faq-q {
+    font-size: clamp(22px, 1.9vw, 32px);
+  }
+
+  .faq-toggle {
+    width: clamp(44px, 2.86vw, 48px);
+    height: clamp(44px, 2.86vw, 48px);
+    flex-basis: clamp(44px, 2.86vw, 48px);
+  }
+
   .steps {
     padding-top: clamp(48px, 3.81vw, 64px);
     padding-bottom: clamp(48px, 3.81vw, 64px);
@@ -165,6 +242,70 @@
   .steps-cta-text {
     font-size: clamp(18px, 1.43vw, 24px);
     line-height: clamp(18px, 1.43vw, 24px);
+  }
+
+  .reviews {
+    gap: clamp(28px, 6.3vw, 106px);
+    padding-left: clamp(16px, 5.35vw, 90px);
+    padding-right: clamp(16px, 5.35vw, 90px);
+  }
+
+  .reviews-title {
+    flex-basis: clamp(300px, 24.8vw, 417px);
+    max-width: clamp(300px, 24.8vw, 417px);
+    gap: clamp(12px, 0.95vw, 16px);
+  }
+
+  .reviews-h2 {
+    font-size: clamp(40px, 3.8vw, 64px);
+  }
+
+  .reviews-carousel {
+    grid-template-columns: clamp(44px, 2.86vw, 56px) 1fr clamp(
+        44px,
+        2.86vw,
+        56px
+      );
+    gap: clamp(12px, 1.43vw, 24px);
+  }
+
+  .reviews-nav {
+    width: clamp(44px, 2.86vw, 56px);
+    height: clamp(44px, 2.86vw, 56px);
+    border-radius: clamp(14px, 0.95vw, 16px);
+  }
+
+  .reviews-cards {
+    max-width: clamp(420px, 20.3vw, 660px);
+  }
+
+  .review-card {
+    max-width: clamp(420px, 35.4vw, 594px);
+    padding: clamp(20px, 2.86vw, 48px);
+    gap: clamp(14px, 1.43vw, 24px);
+    border-radius: clamp(12px, 0.95vw, 16px);
+  }
+
+  .review-card.is-back {
+    transform: translateX(clamp(-28px, -2.86vw, -48px))
+      translateY(clamp(-10px, -0.83vw, -14px)) rotate(4.55deg);
+  }
+
+  .reviews-cards {
+    min-height: clamp(340px, 20.6vw, 463px);
+  }
+
+  .review-logo {
+    width: clamp(84px, 6.35vw, 106.67px);
+    height: clamp(50px, 3.8vw, 64px);
+  }
+
+  .review-name {
+    font-size: clamp(22px, 1.9vw, 32px);
+  }
+
+  .review-text {
+    font-size: clamp(16px, 1.19vw, 20px);
   }
 }
 
@@ -259,6 +400,66 @@
     font-size: 24px;
   }
 
+  .bottom-hero-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 48px 32px;
+  }
+
+  .bottom-hero-visual {
+    order: 2;
+  }
+
+  .bottom-hero-image {
+    width: 420px;
+  }
+
+  .bottom-hero-title {
+    font-size: 64px;
+  }
+
+  .bottom-hero-text {
+    font-size: 24px;
+  }
+
+  .reviews {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .reviews-title {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .reviews-subtitle {
+    display: block;
+    font-size: 22px;
+  }
+
+  .reviews-carousel {
+    grid-template-columns: 44px 1fr 44px;
+  }
+
+  .reviews-cards {
+    max-width: 100%;
+  }
+
+  .review-card {
+    justify-self: stretch;
+    max-width: 100%;
+  }
+
+  .review-card--tilt {
+    transform: rotate(3deg) translateY(-10px);
+  }
+
+  .review-card.is-back {
+    transform: rotate(3deg) translateY(-10px);
+  }
+
   .hero-primary,
   .hero-ghost {
     width: auto;
@@ -287,6 +488,9 @@
 
 /* Tablet uses mobile container width (content 398px) */
 @media (max-width: 768px) and (min-width: 431px) {
+  body {
+    overflow-x: hidden;
+  }
   .header-container {
     max-width: 430px;
     padding-left: 16px;
@@ -319,6 +523,217 @@
 
   .primary .text {
     display: none;
+  }
+
+  /* Audience / Frame 14 (768→431 uses mobile layout) */
+  .audience-section {
+    padding: 0 0 24px;
+  }
+
+  .audience-section .container {
+    padding: 0;
+  }
+
+  .audience {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .audience-left {
+    width: 398px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+
+  .audience-title {
+    width: 398px;
+    gap: 16px;
+  }
+
+  .audience-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .audience-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .audience-image {
+    width: 398px;
+  }
+
+  .audience-grid {
+    width: 398px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+
+  .audience-grid .audience-card {
+    width: 398px;
+    height: auto;
+    min-height: 220px;
+    border-radius: 14px;
+  }
+
+  /* FAQ / Frame 15 (768→431 uses mobile layout) */
+  .faq-section {
+    padding: 0 0 24px;
+  }
+
+  .faq-section .container {
+    padding: 0;
+  }
+
+  .faq {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .faq-title,
+  .faq-title-row {
+    width: 398px;
+  }
+
+  .faq-h2 {
+    font-size: 48px;
+    line-height: 100%;
+  }
+
+  .faq-list {
+    width: 398px;
+    gap: 16px;
+  }
+
+  .faq-q {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .faq-panel {
+    max-width: 398px;
+  }
+
+  /* Features / Frame 14 (768→431 uses mobile layout) */
+  .features {
+    min-height: auto;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .features-title {
+    max-width: 398px;
+  }
+
+  .features-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .features-sub {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .features-list {
+    max-width: 398px;
+    gap: 16px;
+  }
+
+  /* Reviews / Frame 12 (768→431 uses mobile layout) */
+  .reviews-section {
+    padding: 0 0 24px;
+  }
+
+  .reviews-section .container {
+    padding: 0;
+  }
+
+  .reviews {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .reviews-title {
+    width: 398px;
+    max-width: 398px;
+    gap: 16px;
+  }
+
+  .reviews-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .reviews-subtitle {
+    display: none;
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .reviews-carousel {
+    width: 398px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    justify-content: start;
+  }
+
+  .reviews-nav {
+    display: none;
+  }
+
+  .reviews-cards {
+    width: 398px;
+    max-width: 398px;
+    min-height: 331px;
+  }
+
+  .review-card {
+    max-width: 390px;
+    justify-self: start;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .review-top {
+    gap: 16px;
+  }
+
+  .review-name {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .review-role {
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .review-card.is-back {
+    transform: translateX(-7px) translateY(-14px) rotate(4.55deg);
+  }
+
+  .reviews-scroll {
+    display: block;
+    width: 398px;
   }
 
   .hero-card {
@@ -709,6 +1124,191 @@
     padding: 0 16px;
   }
 
+  /* Audience / Frame 14 (430px) */
+  .audience-section {
+    padding: 0 0 24px;
+  }
+
+  .audience-section .container {
+    padding: 0;
+  }
+
+  .audience {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .audience-left {
+    width: 398px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+
+  .audience-title {
+    width: 398px;
+    gap: 16px;
+  }
+
+  .audience-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .audience-subtitle {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .audience-image {
+    width: 398px;
+  }
+
+  .audience-grid {
+    width: 398px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+
+  .audience-grid .audience-card {
+    width: 398px;
+    height: auto;
+    min-height: 220px;
+    border-radius: 14px;
+  }
+
+  /* FAQ / Frame 15 (430px) */
+  .faq-section {
+    padding: 0 0 24px;
+  }
+
+  .faq-section .container {
+    padding: 0;
+  }
+
+  .faq {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .faq-title,
+  .faq-title-row {
+    width: 398px;
+  }
+
+  .faq-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .faq-list {
+    width: 398px;
+    gap: 16px;
+  }
+
+  .faq-q {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .faq-panel {
+    max-width: 398px;
+  }
+
+  /* Reviews / Frame 12 (430px) */
+  .reviews-section {
+    padding: 0 0 24px;
+  }
+
+  .reviews-section .container {
+    padding: 0;
+  }
+
+  .reviews {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .reviews-title {
+    width: 398px;
+    max-width: 398px;
+    gap: 16px;
+  }
+
+  .reviews-h2 {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .reviews-subtitle {
+    display: none;
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .reviews-carousel {
+    width: 398px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    justify-content: start;
+  }
+
+  .reviews-nav {
+    display: none;
+  }
+
+  .reviews-cards {
+    width: 398px;
+    max-width: 398px;
+    min-height: 331px;
+  }
+
+  .review-card {
+    max-width: 390px;
+    justify-self: start;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .review-top {
+    gap: 16px;
+  }
+
+  .review-name {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .review-role {
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .review-card.is-back {
+    transform: translateX(-7px) translateY(-14px) rotate(4.55deg);
+  }
+
+  .reviews-scroll {
+    display: block;
+    width: 398px;
+  }
+
   .hero-section {
     padding: 0 0 24px;
   }
@@ -787,6 +1387,90 @@
   }
 
   .hero-image {
+    width: 587px;
+    transform: none;
+    margin-top: 0;
+    margin-left: -56px;
+  }
+
+  .bottom-hero-section {
+    padding: 0 0 24px;
+  }
+
+  .bottom-hero-card {
+    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    min-height: 1128px;
+    padding: 37px 18px 24px;
+    border-radius: 20px;
+  }
+
+  .bottom-hero-content {
+    max-width: 362px;
+    margin-top: 0;
+    gap: 24px;
+  }
+
+  .bottom-hero-title {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    gap: 0;
+  }
+
+  .bottom-hero-text {
+    font-size: 20px;
+    line-height: 120%;
+    margin-top: 0;
+    letter-spacing: 0;
+  }
+
+  .bottom-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .bottom-hero-primary {
+    width: 252px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .bottom-hero-telegram {
+    gap: 0;
+  }
+
+  .bottom-hero-ghost {
+    width: 245px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .bottom-hero-circle {
+    width: 72px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 40px;
+  }
+
+  .bottom-hero-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .bottom-hero-image {
     width: 587px;
     transform: none;
     margin-top: 0;
