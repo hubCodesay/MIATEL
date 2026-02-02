@@ -292,9 +292,230 @@ html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 0;
+
   padding: 0 clamp(20px, 3.5vw, 31px);
   position: relative;
 }
+
+/* Footer / Frame 16 */
+.site-footer {
+  background: #2f2f2f;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 64px 120px;
+  gap: 24px;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+.footer-brand {
+  width: 213.9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.footer-logo {
+  width: 213.9px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-logo-img {
+  width: 213.9px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.footer-contacts {
+  width: 575px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-contacts-label {
+  font-family: "Muller", "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--fg);
+}
+
+.footer-contacts-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.footer-contact-item {
+  font-family: "Muller", "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -1px;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+  color: var(--fg);
+}
+
+.footer-contact-link {
+  white-space: nowrap;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.footer-contact-link:hover {
+  opacity: 0.85;
+}
+
+.footer-actions {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.footer-actions-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  width: 110px;
+  height: 48px;
+  background: #2053ac;
+  border-radius: 16px;
+  text-decoration: none;
+  font-family: "Muller", "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--fg);
+}
+
+.footer-top-btn {
+  width: 72px;
+  height: 72px;
+  background: #4f4f4f;
+  border-radius: 96px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer-social {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  background: #4f4f4f;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer-contact-btn:hover,
+.footer-top-btn:hover,
+.footer-social-btn:hover {
+  opacity: 0.9;
+}
+
+.footer-contact-btn:focus-visible,
+.footer-top-btn:focus-visible,
+.footer-social-btn:focus-visible,
+.footer-contact-link:focus-visible,
+.footer-logo:focus-visible {
+  outline: 2px solid #2053ac;
+  outline-offset: 2px;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-bottom-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-copy {
+  font-family: "Gilroy", "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: var(--fg);
+}
+
+.footer-link {
+  font-family: "Gilroy", "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #2053ac;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 
 .bottom-hero-card::before {
   content: "";

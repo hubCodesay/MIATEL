@@ -188,6 +188,60 @@
     flex-basis: clamp(44px, 2.86vw, 48px);
   }
 
+  .site-footer {
+    padding-top: clamp(40px, 3.81vw, 64px);
+    padding-bottom: clamp(40px, 3.81vw, 64px);
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    gap: clamp(16px, 1.43vw, 24px);
+  }
+
+  .footer-top {
+    gap: clamp(32px, 3.81vw, 64px);
+  }
+
+  .footer-brand {
+    width: clamp(160px, 14vw, 213.9px);
+  }
+
+  .footer-logo,
+  .footer-logo-img {
+    width: clamp(160px, 14vw, 213.9px);
+    height: clamp(36px, 3.2vw, 48px);
+  }
+
+  .footer-contacts {
+    width: clamp(360px, 34vw, 575px);
+  }
+
+  .footer-contacts-row {
+    gap: clamp(20px, 2.86vw, 48px);
+  }
+
+  .footer-contact-item {
+    font-size: clamp(16px, 1.2vw, 20px);
+  }
+
+  .footer-actions {
+    width: clamp(220px, 20vw, 280px);
+  }
+
+  .footer-contact-btn {
+    width: clamp(96px, 6.55vw, 110px);
+    height: clamp(44px, 2.86vw, 48px);
+    border-radius: clamp(12px, 0.95vw, 16px);
+  }
+
+  .footer-top-btn {
+    width: clamp(56px, 4.29vw, 72px);
+    height: clamp(56px, 4.29vw, 72px);
+  }
+
+  .footer-social-btn {
+    width: clamp(36px, 2.38vw, 40px);
+    height: clamp(36px, 2.38vw, 40px);
+  }
+
   .steps {
     padding-top: clamp(48px, 3.81vw, 64px);
     padding-bottom: clamp(48px, 3.81vw, 64px);
@@ -642,6 +696,53 @@
 
   .faq-panel {
     max-width: 398px;
+  }
+
+  /* Footer / Frame 16 (768→431) */
+  .site-footer {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-brand,
+  .footer-logo,
+  .footer-logo-img {
+    width: 213.9px;
+    height: 48px;
+  }
+
+  .footer-contacts {
+    width: 398px;
+  }
+
+  .footer-contacts-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-actions {
+    width: 398px;
+    align-items: flex-start;
+  }
+
+  .footer-actions-top {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-row {
+    flex-wrap: wrap;
   }
 
   /* Features / Frame 14 (768→431 uses mobile layout) */
@@ -1242,6 +1343,53 @@
 
   .faq-panel {
     max-width: 398px;
+  }
+
+  /* Footer / Frame 16 (430px) */
+  .site-footer {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-brand,
+  .footer-logo,
+  .footer-logo-img {
+    width: 213.9px;
+    height: 48px;
+  }
+
+  .footer-contacts {
+    width: 398px;
+  }
+
+  .footer-contacts-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-actions {
+    width: 398px;
+    align-items: flex-start;
+  }
+
+  .footer-actions-top {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-row {
+    flex-wrap: wrap;
   }
 
   /* Reviews / Frame 12 (430px) */
