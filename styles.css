@@ -428,6 +428,130 @@ html {
   left: -77px;
 }
 
+/* Bottom Hero 2 (duplicate of bottom-hero, separate classes) */
+.bottom-hero2-section {
+  padding: 0;
+  margin-top: 84px;
+}
+
+.bottom-hero2-card {
+  width: 100%;
+  min-height: clamp(520px, 50vw, 850px);
+  height: auto;
+  overflow: visible;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0;
+  padding: 0 0 0 113px;
+  position: relative;
+}
+
+.bottom-hero2-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/girl_bg.svg") center / 100% 100% no-repeat;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+  height: 800px;
+}
+
+.bottom-hero2-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-hero2-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 672px;
+  margin-top: clamp(28px, 4.2vw, 54px);
+  letter-spacing: -3px;
+}
+
+.bottom-hero2-title {
+  margin: 0;
+  font-family: "Muller", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(44px, 5.2vw, 88px);
+  line-height: 90%;
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bottom-hero2-accent {
+  color: #41adf1;
+}
+
+.bottom-hero2-text {
+  margin: 0;
+  font-family: "Muller", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 120%;
+  color: var(--fg);
+  max-width: 672px;
+  margin-top: clamp(16px, 2.2vw, 31px);
+  letter-spacing: -1px;
+}
+
+.bottom-hero2-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.4vw, 24px);
+  margin-top: clamp(20px, 3vw, 49px);
+}
+
+.bottom-hero2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Muller", "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.bottom-hero2-primary {
+  width: clamp(220px, 17vw, 356px);
+  height: clamp(56px, 4.2vw, 72px);
+  padding: clamp(16px, 1.4vw, 24px);
+  border-radius: clamp(12px, 1vw, 16px);
+  background: #2053ac;
+  color: var(--fg);
+  font-size: clamp(16px, 1.3vw, 21px);
+  line-height: 24px;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+}
+
+.bottom-hero2-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1vw, 16px);
+}
+
+.bottom-hero2-image {
+  width: clamp(280px, 38vw, 674px);
+  height: auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transform: scale(1.3);
+  margin-top: clamp(24px, 4.4vw, 75px);
+  margin-left: clamp(0px, 4.2vw, 71px);
+  position: relative;
+  bottom: 10px;
+  left: -28px;
+}
+
 /* Audience / Frame 14 */
 .audience-section {
   padding: 0;

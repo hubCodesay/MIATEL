@@ -406,7 +406,17 @@
     padding: 48px 32px;
   }
 
+  .bottom-hero2-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 48px 32px;
+  }
+
   .bottom-hero-visual {
+    order: 2;
+  }
+
+  .bottom-hero2-visual {
     order: 2;
   }
 
@@ -414,11 +424,23 @@
     width: 420px;
   }
 
+  .bottom-hero2-image {
+    width: 420px;
+  }
+
   .bottom-hero-title {
     font-size: 64px;
   }
 
+  .bottom-hero2-title {
+    font-size: 64px;
+  }
+
   .bottom-hero-text {
+    font-size: 24px;
+  }
+
+  .bottom-hero2-text {
     font-size: 24px;
   }
 
@@ -1397,7 +1419,23 @@
     padding: 0 0 24px;
   }
 
+  .bottom-hero2-section {
+    padding: 0 0 24px;
+  }
+
   .bottom-hero-card {
+    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    min-height: 1128px;
+    padding: 37px 18px 24px;
+    border-radius: 20px;
+  }
+
+  .bottom-hero2-card {
     background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
     display: flex;
     flex-direction: column;
@@ -1415,7 +1453,20 @@
     gap: 24px;
   }
 
+  .bottom-hero2-content {
+    max-width: 362px;
+    margin-top: 0;
+    gap: 24px;
+  }
+
   .bottom-hero-title {
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    gap: 0;
+  }
+
+  .bottom-hero2-title {
     font-size: 48px;
     line-height: 100%;
     letter-spacing: -1px;
@@ -1429,6 +1480,13 @@
     letter-spacing: 0;
   }
 
+  .bottom-hero2-text {
+    font-size: 20px;
+    line-height: 120%;
+    margin-top: 0;
+    letter-spacing: 0;
+  }
+
   .bottom-hero-actions {
     flex-direction: column;
     align-items: flex-start;
@@ -1436,7 +1494,23 @@
     margin-top: 0;
   }
 
+  .bottom-hero2-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 0;
+  }
+
   .bottom-hero-primary {
+    width: 252px;
+    height: 72px;
+    padding: 24px;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .bottom-hero2-primary {
     width: 252px;
     height: 72px;
     padding: 24px;
@@ -1470,7 +1544,19 @@
     justify-content: flex-start;
   }
 
+  .bottom-hero2-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .bottom-hero-image {
+    width: 587px;
+    transform: none;
+    margin-top: 0;
+    margin-left: -56px;
+  }
+
+  .bottom-hero2-image {
     width: 587px;
     transform: none;
     margin-top: 0;
