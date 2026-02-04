@@ -1,12 +1,30 @@
 /* Responsive overrides */
 
 /* Fluid scaling below the 1680 baseline (desktop/tablet landscape) */
-@media (max-width: 1679px) and (min-width: 769px) {
+@media (max-width: 1679px) and (min-width: 1200px),
+  (max-width: 1200px) and (min-width: 992px) {
   .container {
     padding-left: clamp(16px, 1.8vw, 30px);
     padding-right: clamp(16px, 1.8vw, 30px);
   }
+  .faq-section::after {
+    width: 1306.93px;
+    height: 706.93px;
+    left: -469.63px;
+    top: -420px;
+  }
+  .bottom-hero2-section {
+    height: 801px;
+  }
+  .hero-title {
+    margin-top: 20px;
+  }
 
+  .hero-scroll {
+    bottom: 40px;
+    width: clamp(46px, 4.2vw, 72px);
+    height: clamp(46px, 4.2vw, 72px);
+  }
   .header-container {
     padding-left: clamp(16px, 1.8vw, 30px);
     padding-right: clamp(16px, 1.8vw, 30px);
@@ -112,9 +130,16 @@
   }
 
   .audience-section {
-    padding-bottom: clamp(60px, 5.95vw, 100px);
+    padding-bottom: 0;
   }
 
+  .faq-section {
+    padding-bottom: 0;
+    margin: 0;
+  }
+  .bottom-hero-card::before {
+    height: 540px;
+  }
   .audience {
     padding-left: clamp(48px, 7.14vw, 120px);
     padding-right: clamp(48px, 7.14vw, 120px);
@@ -123,7 +148,7 @@
   }
 
   .audience-left {
-    flex: 0 0 clamp(360px, 40vw, 677px);
+    flex: 0 1 clamp(360px, 40vw, 677px);
     width: auto;
   }
 
@@ -146,29 +171,35 @@
   }
 
   .audience-grid {
-    flex: 1 1 auto;
-    width: auto;
+    flex: 1 1 clamp(420px, 58vw, 967px);
+    width: 100%;
     max-width: 967px;
     gap: clamp(14px, 1.4vw, 24px);
   }
 
   .audience-grid .audience-card {
-    width: clamp(320px, 27.9vw, 470.8px);
-    height: clamp(300px, 23.8vw, 400px);
+    width: 100%;
+    height: auto;
+    min-height: clamp(220px, 20vw, 400px);
   }
 
   .faq {
     padding-left: clamp(48px, 7.14vw, 120px);
     padding-right: clamp(48px, 7.14vw, 120px);
     gap: clamp(32px, 3.81vw, 64px);
-    min-height: clamp(320px, 28vw, 412px);
+    min-height: clamp(560px, 49vw, 824px);
   }
 
   .faq-title {
-    flex: 0 0 clamp(360px, 40vw, 677px);
+    flex: 0 1 clamp(360px, 40vw, 677px);
     width: auto;
   }
-
+  .bottom-hero2-section {
+    margin: -150px 0 0 0;
+  }
+  .bottom-hero-section::before {
+    left: -490.55px;
+  }
   .faq-h2 {
     font-size: clamp(44px, 3.81vw, 64px);
   }
@@ -176,16 +207,104 @@
   .faq-list {
     width: auto;
     max-width: 967px;
+    gap: clamp(14px, 1.4vw, 24px);
   }
 
   .faq-q {
-    font-size: clamp(22px, 1.9vw, 32px);
+    font-size: clamp(24px, 1.9vw, 32px);
   }
 
   .faq-toggle {
     width: clamp(44px, 2.86vw, 48px);
     height: clamp(44px, 2.86vw, 48px);
     flex-basis: clamp(44px, 2.86vw, 48px);
+  }
+
+  /* Consistent horizontal paddings for sections/cards */
+  .hero-section,
+  .bottom-hero-card,
+  .bottom-hero2-card,
+  .site-header {
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+  }
+
+  /* Bottom Hero (fluid down from 1680 baseline) */
+  .bottom-hero-content {
+    margin-top: clamp(18px, 2.8vw, 40px);
+    letter-spacing: clamp(-2px, -0.12vw, -1px);
+  }
+
+  .bottom-hero-title {
+    font-size: clamp(36px, 3.8vw, 66px);
+  }
+
+  .bottom-hero-text {
+    font-size: clamp(15px, 1.35vw, 24px);
+    max-width: 600px;
+    margin-top: clamp(12px, 1.4vw, 22px);
+  }
+
+  .bottom-hero-primary {
+    width: clamp(200px, 14vw, 280px);
+    height: clamp(48px, 3.6vw, 64px);
+    padding: clamp(14px, 1.1vw, 20px);
+    font-size: clamp(14px, 1vw, 18px);
+  }
+
+  .bottom-hero-ghost {
+    width: clamp(200px, 14vw, 280px);
+    height: clamp(48px, 3.6vw, 64px);
+    padding: clamp(14px, 1.1vw, 20px) clamp(6px, 0.6vw, 6px);
+    font-size: clamp(14px, 1vw, 18px);
+  }
+
+  .bottom-hero-actions {
+    gap: clamp(10px, 1.2vw, 18px);
+    margin-top: clamp(16px, 2.2vw, 32px);
+  }
+
+  .bottom-hero-image {
+    width: clamp(260px, 34vw, 460px);
+    transform: scale(1.15);
+    margin-top: clamp(18px, 3vw, 60px);
+    margin-left: clamp(0px, 3vw, 52px);
+    bottom: clamp(80px, 6.8vw, 110px);
+    left: clamp(-77px, -4vw, -52px);
+  }
+
+  /* Bottom Hero 2 (fluid down from 1680 baseline) */
+  .bottom-hero2-card {
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
+    align-items: center;
+  }
+
+  .bottom-hero2-content {
+    margin-top: clamp(18px, 2.8vw, 40px);
+    letter-spacing: clamp(-2px, -0.12vw, -1px);
+  }
+
+  .bottom-hero2-title {
+    font-size: clamp(36px, 3.8vw, 66px);
+  }
+
+  .bottom-hero2-text {
+    font-size: clamp(15px, 1.35vw, 24px);
+    max-width: 600px;
+    margin-top: clamp(12px, 1.4vw, 22px);
+  }
+
+  .bottom-hero2-primary {
+    width: clamp(200px, 18vw, 300px);
+    height: clamp(48px, 3.6vw, 64px);
+    padding: clamp(14px, 1.1vw, 20px);
+    font-size: clamp(14px, 1vw, 18px);
+  }
+
+  .bottom-hero2-actions {
+    gap: clamp(10px, 1.2vw, 18px);
+    margin-top: clamp(16px, 2.2vw, 32px);
   }
 
   .site-footer {
@@ -199,6 +318,14 @@
   .footer-top {
     gap: clamp(32px, 3.81vw, 64px);
   }
+  .bottom-hero2-section::after {
+    width: 1185.77px;
+    height: 479.46px;
+  }
+  .about-image {
+    position: relative;
+    left: -230px;
+  }
 
   .footer-brand {
     width: clamp(160px, 14vw, 213.9px);
@@ -206,7 +333,7 @@
 
   .footer-logo,
   .footer-logo-img {
-    width: clamp(160px, 14vw, 213.9px);
+    width: clamp(160px, 11vw, 213.9px);
     height: clamp(36px, 3.2vw, 48px);
   }
 
@@ -215,9 +342,11 @@
   }
 
   .footer-contacts-row {
-    gap: clamp(20px, 2.86vw, 48px);
+    gap: clamp(20px, 1.6vw, 48px);
   }
-
+  .footer-contact-item {
+    letter-spacing: -1px;
+  }
   .footer-contact-item {
     font-size: clamp(16px, 1.2vw, 20px);
   }
@@ -227,7 +356,7 @@
   }
 
   .footer-contact-btn {
-    width: clamp(96px, 6.55vw, 110px);
+    width: clamp(96px, 30.55vw, 110px);
     height: clamp(44px, 2.86vw, 48px);
     border-radius: clamp(12px, 0.95vw, 16px);
   }
@@ -279,7 +408,7 @@
   }
 
   .step-title {
-    font-size: clamp(22px, 1.3vw, 32px);
+    font-size: clamp(20px, 1.3vw, 32px);
   }
 
   .step-desc {
@@ -300,8 +429,8 @@
 
   .reviews {
     gap: clamp(28px, 6.3vw, 106px);
-    padding-left: clamp(16px, 5.35vw, 90px);
-    padding-right: clamp(16px, 5.35vw, 90px);
+    padding-left: clamp(48px, 7.14vw, 120px);
+    padding-right: clamp(48px, 7.14vw, 120px);
   }
 
   .reviews-title {
@@ -363,6 +492,38 @@
   }
 }
 
+/* Audience tuning for smaller desktops (≤1400) */
+@media (max-width: 1400px) and (min-width: 1200px) {
+  .audience-h2 {
+    font-size: clamp(36px, 3.1vw, 56px);
+    letter-spacing: clamp(-2px, -0.2vw, -1px);
+  }
+
+  .audience-subtitle {
+    font-size: clamp(18px, 1.6vw, 28px);
+  }
+
+  .audience-section .adv-icon {
+    width: clamp(72px, 5.4vw, 104px);
+    height: clamp(72px, 5.4vw, 104px);
+    border-radius: clamp(56px, 4.4vw, 84px);
+  }
+
+  .audience-section .adv-icon svg {
+    width: clamp(28px, 2.4vw, 40px);
+    height: clamp(28px, 2.4vw, 40px);
+  }
+
+  .audience-section .adv-title {
+    font-size: clamp(28px, 2.2vw, 40px);
+  }
+
+  .audience-section .adv-desc {
+    font-size: clamp(14px, 1.1vw, 18px);
+    line-height: 140%;
+  }
+}
+
 /* Slightly smaller Advantages below 1600px */
 @media (max-width: 1599px) and (min-width: 769px) {
   .advantages {
@@ -404,29 +565,135 @@
   }
 }
 
-@media (max-width: 1200px) and (min-width: 721px) {
-  .header-container {
-    padding: 12px 5vw;
-  }
-
-  .container {
-    padding: 0 5vw;
-  }
-
-  .logo-img {
-    width: 110px;
-    height: 24px;
-  }
-
-  .primary {
-    min-width: 120px;
-    height: 44px;
-    padding: 10px 12px;
-    font-size: 15px;
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .audience-section {
+    margin-top: 0 !important;
   }
 }
 
-@media (max-width: 1200px) {
+/* Compact desktop (992→1200): keep PC layout, slightly tighter sizing */
+@media (max-width: 1200px) and (min-width: 992px) {
+  /* Consistent horizontal gutters */
+  .container,
+  .header-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contact-panel-section::before {
+    content: "";
+    position: absolute;
+    width: 1185.77px;
+    height: 530.34px;
+    left: -580.55px;
+  }
+  .hero-section,
+  .bottom-hero-card,
+  .bottom-hero2-card,
+  .site-header,
+  .about,
+  .advantages,
+  .audience,
+  .faq,
+  .reviews,
+  .steps,
+  .site-footer,
+  .contact-panel-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-brand {
+    width: clamp(19px, 1vw, 143.9px);
+  }
+  .footer-top {
+    gap: clamp(2px, 1.1vw, 64px);
+  }
+  .footer-logo,
+  .footer-logo-img {
+    width: clamp(120px, 11vw, 213.9px);
+  }
+  .footer-contacts {
+    width: clamp(360px, 46vw, 435px);
+  }
+  :root {
+    --btn-h-992: clamp(48px, 4.2vw, 56px);
+  }
+
+  /* Text buttons: same height + keep labels on one line */
+  .primary,
+  .hero-primary,
+  .hero-ghost,
+  .bottom-hero-primary,
+  .bottom-hero-ghost,
+  .bottom-hero2-primary,
+  .steps-cta,
+  .contact-form__btn,
+  .footer-contact-btn {
+    height: var(--btn-h-992);
+    min-height: var(--btn-h-992);
+    white-space: nowrap;
+  }
+
+  /* Slightly tighter paddings/font on smaller desktops so text doesn't wrap */
+  .primary,
+  .hero-btn,
+  .bottom-hero-btn,
+  .bottom-hero2-btn,
+  .steps-cta,
+  .contact-form__btn {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: clamp(14px, 1.6vw, 22px);
+    padding-right: clamp(14px, 1.6vw, 22px);
+    font-size: clamp(14px, 1.25vw, 18px);
+    line-height: 1.1;
+  }
+
+  /* Ensure the long Telegram CTA doesn't wrap at 992–1100 */
+  .hero-ghost {
+    width: auto;
+    min-width: clamp(240px, 26vw, 320px);
+  }
+
+  .contact-form__textarea {
+    height: 80px;
+  }
+
+  .bottom-hero-card {
+    align-items: center;
+  }
+  .audience-section {
+    margin-top: 40px;
+  }
+  .bottom-hero2-section {
+    height: 552px;
+    margin-top: -100px;
+  }
+  .bottom-hero2-section::before {
+    content: "";
+    position: absolute;
+    width: 1185.77px;
+    height: 30.34px;
+    left: -341.1px;
+    top: 142.88px;
+  }
+  .bottom-hero2-section::after {
+    top: -77.33px;
+  }
+  .about-image {
+    left: clamp(-190px, -16vw, -140px);
+    width: clamp(720px, 78vw, 900px);
+    height: clamp(600px, 28vw, 900px);
+    margin-left: clamp(-180px, -14vw, -120px);
+    margin-right: clamp(-560px, -48vw, -420px);
+  }
+
+  .advantages-section {
+    margin-top: clamp(-200px, -14vw, -140px);
+  }
+}
+
+@media (max-width: 991px) {
   .hero-card {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -435,11 +702,6 @@
 
   .hero-visual {
     order: 2;
-  }
-
-  .hero-blob {
-    width: 480px;
-    height: 480px;
   }
 
   .hero-image {
@@ -463,7 +725,7 @@
   .bottom-hero2-card {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 48px 32px;
+    padding: clamp(32px, 4vw, 48px) clamp(20px, 2.7vw, 32px);
   }
 
   .bottom-hero-visual {
@@ -479,7 +741,7 @@
   }
 
   .bottom-hero2-image {
-    width: 420px;
+    width: clamp(320px, 50vw, 420px);
   }
 
   .bottom-hero-title {
@@ -487,7 +749,7 @@
   }
 
   .bottom-hero2-title {
-    font-size: 64px;
+    font-size: clamp(44px, 6vw, 64px);
   }
 
   .bottom-hero-text {
@@ -495,7 +757,7 @@
   }
 
   .bottom-hero2-text {
-    font-size: 24px;
+    font-size: clamp(18px, 2.2vw, 24px);
   }
 
   .reviews {
@@ -560,10 +822,81 @@
     font-size: 40px;
     height: auto;
   }
+
+  /* Audience becomes stacked and flexible */
+  .audience {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .audience-grid {
+    max-width: 100%;
+  }
+
+  /* Contact panel / Frame 17-18 (responsive) */
+  .contact-panel-section {
+    padding: 0 5vw;
+    margin-top: 64px;
+  }
+
+  .contact-panel {
+    height: auto;
+    padding: 32px;
+  }
+
+  .contact-panel::after {
+    background: url(img/Subtract_2.png) center / cover no-repeat;
+  }
+
+  .contact-form {
+    --form-art-opacity: 1;
+    --form-art-scale: 0.85;
+    --form-art-w: clamp(460px, 52vw, 760px);
+    --form-art-x: 60px;
+    --form-art-y: -40px;
+  }
+
+  .contact-panel__content {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .contact-panel__left {
+    flex: 0 0 auto;
+    padding-left: 0;
+  }
+
+  .contact-panel__title {
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .contact-panel__copy {
+    font-size: clamp(18px, 2.2vw, 24px);
+    line-height: 120%;
+  }
+
+  .contact-form {
+    width: min(666px, 100%);
+    flex: 0 0 auto;
+    height: auto;
+  }
+
+  .contact-form__form {
+    padding: 48px;
+  }
+
+  .contact-form__btn {
+    width: min(274px, 100%);
+  }
 }
 
 /* Tablet uses mobile container width (content 398px) */
-@media (max-width: 768px) and (min-width: 431px) {
+@media (max-width: 768px) and (min-width: 433px) {
   body {
     overflow-x: hidden;
   }
@@ -572,6 +905,7 @@
     padding-left: 16px;
     padding-right: 16px;
     gap: 12px;
+    height: 66px;
   }
 
   .container {
@@ -580,8 +914,11 @@
   }
 
   .logo-img {
-    width: 90px;
-    height: 22px;
+    width: 108px;
+    height: 42px;
+  }
+  .controls {
+    gap: 21px;
   }
 
   .lang {
@@ -619,13 +956,15 @@
   }
 
   .audience-left {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     flex: 0 0 auto;
     gap: 16px;
   }
 
   .audience-title {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     gap: 16px;
   }
 
@@ -641,17 +980,20 @@
   }
 
   .audience-image {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
   }
 
   .audience-grid {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     flex: 0 0 auto;
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .audience-grid .audience-card {
-    width: 398px;
+    width: 100%;
     height: auto;
     min-height: 220px;
     border-radius: 14px;
@@ -862,17 +1204,16 @@
   .hero-card {
     width: 398px;
     max-width: 398px;
-    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
-
+    background: url(img/hero-card-bg-mobile.svg) center / 100% 100% no-repeat;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-
     height: auto;
     min-height: 1128px;
-    padding: 37px 18px 24px;
+    padding: 48px 0px 0 24px;
     border-radius: 20px;
+    margin: 0 auto;
   }
 
   .hero-content {
@@ -893,7 +1234,7 @@
     font-size: 20px;
     line-height: 120%;
     margin-top: 0;
-    letter-spacing: 0;
+    letter-spacing: -0.5px;
   }
 
   .hero-actions {
@@ -907,7 +1248,7 @@
   .hero-primary {
     width: min(252px, 100%);
     height: 72px;
-    padding: 24px;
+    padding: 0;
     border-radius: 14px;
     font-size: 20px;
     line-height: 24px;
@@ -921,7 +1262,7 @@
   .hero-ghost {
     width: min(245px, 100%);
     height: 72px;
-    padding: 24px;
+    padding: 0;
     border-radius: 14px;
     font-size: 20px;
     line-height: 24px;
@@ -940,20 +1281,22 @@
   }
 
   .hero-image {
-    width: 587px;
+    width: 551px;
     max-width: none;
     transform: none;
-    margin-top: 0;
-    margin-left: -56px;
+    margin-top: 16px;
+    margin-left: -96px;
   }
 
   .hero-scroll {
-    position: static;
+    position: absolute;
     margin-top: auto;
     width: 72px;
     height: 72px;
+    bottom: -52px;
     border-radius: 14px;
     background: var(--muted);
+    right: 121px;
     align-self: flex-start;
   }
 
@@ -1172,6 +1515,71 @@
     font-size: 20px;
     line-height: 24px;
   }
+
+  /* Contact panel (768→431) */
+  .contact-panel-section {
+    padding: 0 0 24px;
+    margin-top: 48px;
+  }
+
+  .contact-panel {
+    width: 398px;
+    max-width: 398px;
+    height: auto;
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .contact-panel::after {
+    opacity: 0.35;
+    background: url(img/Subtract_2.png) center / cover no-repeat;
+  }
+
+  .contact-form {
+    --form-art-opacity: 1;
+    --form-art-scale: 0.6;
+    --form-art-w: 816px;
+    --form-art-x: 80px;
+    --form-art-y: -120px;
+  }
+
+  .contact-panel__content {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .contact-panel__left {
+    width: 100%;
+    flex: 0 0 auto;
+    padding-left: 0;
+  }
+
+  .contact-panel__title {
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .contact-panel__copy {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  .contact-form {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  .contact-form__form {
+    padding: 24px;
+  }
+
+  .contact-form__btn {
+    width: min(274px, 100%);
+  }
 }
 
 /* Mobile (exact) */
@@ -1265,13 +1673,15 @@
   }
 
   .audience-left {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     flex: 0 0 auto;
     gap: 16px;
   }
 
   .audience-title {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     gap: 16px;
   }
 
@@ -1287,17 +1697,20 @@
   }
 
   .audience-image {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
   }
 
   .audience-grid {
-    width: 398px;
+    width: 100%;
+    max-width: 398px;
     flex: 0 0 auto;
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .audience-grid .audience-card {
-    width: 398px;
+    width: 100%;
     height: auto;
     min-height: 220px;
     border-radius: 14px;
@@ -1588,11 +2001,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: clamp(10px, 2.4vw, 12px);
     height: auto;
-    min-height: 1128px;
-    padding: 37px 18px 24px;
-    border-radius: 20px;
+    min-height: clamp(920px, 262vw, 1128px);
+    padding: clamp(28px, 8.6vw, 37px) clamp(16px, 4.2vw, 18px)
+      clamp(18px, 5.6vw, 24px);
+    border-radius: clamp(16px, 4.65vw, 20px);
   }
 
   .bottom-hero-content {
@@ -1602,7 +2016,7 @@
   }
 
   .bottom-hero2-content {
-    max-width: 362px;
+    max-width: min(362px, 100%);
     margin-top: 0;
     gap: 24px;
   }
@@ -1615,7 +2029,7 @@
   }
 
   .bottom-hero2-title {
-    font-size: 48px;
+    font-size: clamp(40px, 11.2vw, 48px);
     line-height: 100%;
     letter-spacing: -1px;
     gap: 0;
@@ -1629,7 +2043,7 @@
   }
 
   .bottom-hero2-text {
-    font-size: 20px;
+    font-size: clamp(16px, 4.65vw, 20px);
     line-height: 120%;
     margin-top: 0;
     letter-spacing: 0;
@@ -1645,7 +2059,7 @@
   .bottom-hero2-actions {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: clamp(16px, 5.6vw, 24px);
     margin-top: 0;
   }
 
@@ -1659,11 +2073,11 @@
   }
 
   .bottom-hero2-primary {
-    width: 252px;
-    height: 72px;
-    padding: 24px;
+    width: min(252px, 100%);
+    height: clamp(64px, 16.7vw, 72px);
+    padding: clamp(18px, 5.6vw, 24px);
     border-radius: 14px;
-    font-size: 20px;
+    font-size: clamp(16px, 4.65vw, 20px);
     line-height: 24px;
   }
 
@@ -1705,7 +2119,7 @@
   }
 
   .bottom-hero2-image {
-    width: 587px;
+    width: clamp(420px, 136vw, 587px);
     transform: none;
     margin-top: 0;
     margin-left: -56px;
@@ -1846,6 +2260,70 @@
     font-size: 14px;
     line-height: 130%;
     font-weight: 400;
+  }
+
+  /* Contact panel (≤430) */
+  .contact-panel-section {
+    padding: 0 0 24px;
+    margin-top: 48px;
+  }
+
+  .contact-panel {
+    width: 398px;
+    max-width: calc(100% - 32px);
+    height: auto;
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .contact-panel::after {
+    opacity: 0.3;
+    background: url(img/Subtract_2.png) center / cover no-repeat;
+  }
+
+  .contact-panel::before {
+    display: none;
+  }
+
+  .contact-form::before {
+    display: none;
+  }
+
+  .contact-panel__content {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .contact-panel__left {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .contact-panel__title {
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  .contact-panel__copy {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  .contact-form {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  .contact-form__form {
+    padding: 24px;
+  }
+
+  .contact-form__btn {
+    width: min(274px, 100%);
   }
 
   .steps {

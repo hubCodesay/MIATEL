@@ -78,12 +78,19 @@ input[type="search"] {
   --primary: #2053ac;
   --brand-blue: #5386df;
   --fg: #f2f2f2;
+
+  --ff-base:
+    "Muller", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Fluid typography scale */
+  --fs-h2: clamp(40px, 3.8vw, 64px);
+  --fs-h3: clamp(28px, 2.85vw, 48px);
+  --fs-title: clamp(18px, 1.9vw, 32px);
+  --fs-body: clamp(16px, 1.2vw, 20px);
+  --fs-small: clamp(14px, 1vw, 16px);
 }
 
-html,
-body {
-  height: 100%;
-}
 body {
   margin: 0;
   background-color: var(--bg);
@@ -101,22 +108,19 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: var(--fg);
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial;
+  font-family: var(--ff-base);
 }
-html {
+html,
+body {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  height: 100%;
 }
 
 .hero-section {
   padding: 0 0 80px;
+}
+.hero-section .container {
+  padding: 0;
 }
 
 .hero-card {
@@ -130,7 +134,7 @@ html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 0;
-  padding: 0 clamp(20px, 3.5vw, 31px);
+  padding: 0 clamp(20px, 3.5vw, 66px);
   position: relative;
 }
 
@@ -160,7 +164,7 @@ html {
   margin: 0;
   font-family: "Muller", "Inter", sans-serif;
   font-weight: 700;
-  font-size: clamp(44px, 5.2vw, 88px);
+  font-size: clamp(44px, 4.2vw, 88px);
   line-height: 90%;
   color: var(--fg);
   display: flex;
@@ -176,7 +180,7 @@ html {
   margin: 0;
   font-family: "Muller", "Inter", sans-serif;
   font-weight: 500;
-  font-size: clamp(18px, 2vw, 32px);
+  font-size: clamp(18px, 1.5vw, 32px);
   line-height: 120%;
   color: var(--fg);
   max-width: 672px;
@@ -279,6 +283,39 @@ html {
 /* Bottom Hero (duplicate of hero, separate classes) */
 .bottom-hero-section {
   padding: 0;
+  position: relative;
+}
+
+/* Ellipse 1 (left-side decorative background for bottom-hero-section) */
+.bottom-hero-section::before {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 530.34px;
+  left: -90.55px;
+  top: 9.14px;
+  border-radius: 50%;
+  background: #2053ac;
+  filter: blur(62px);
+  transform: rotate(-45.85deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ellipse 2 (right-side decorative background for bottom-hero-section) */
+.bottom-hero-section::after {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 879.46px;
+  left: 1593.2px;
+  top: 39.96px;
+  background: #2053ac;
+  filter: blur(167px);
+  border-radius: 50%;
+  transform: rotate(40.03deg);
+  pointer-events: none;
+  z-index: -9;
 }
 
 .bottom-hero-card {
@@ -306,6 +343,9 @@ html {
   align-items: flex-start;
   padding: 64px 120px;
   gap: 24px;
+  position: relative;
+  z-index: 99;
+  margin-top: 0;
 }
 
 .footer-inner {
@@ -383,7 +423,7 @@ html {
   font-weight: 700;
   font-size: 20px;
   line-height: 120%;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
   font-feature-settings:
     "pnum" on,
     "lnum" on;
@@ -496,19 +536,19 @@ html {
 }
 
 .footer-copy {
-  font-family: "Gilroy", "Inter", sans-serif;
+  font-family: inherit;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--fs-small);
   line-height: 130%;
   color: var(--fg);
 }
 
 .footer-link {
-  font-family: "Gilroy", "Inter", sans-serif;
+  font-family: inherit;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--fs-small);
   line-height: 130%;
   color: #2053ac;
   text-decoration: underline;
@@ -516,13 +556,12 @@ html {
   text-underline-offset: 2px;
 }
 
-
 .bottom-hero-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url("img/Subtract_2.png") center / 100% 100% no-repeat;
-  opacity: 0.75;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
   height: 700px;
@@ -652,7 +691,45 @@ html {
 /* Bottom Hero 2 (duplicate of bottom-hero, separate classes) */
 .bottom-hero2-section {
   padding: 0;
-  margin-top: 84px;
+  margin-top: clamp(40px, 5vw, 34px);
+  position: relative;
+  z-index: 0;
+  height: 941px;
+}
+
+.bottom-hero2-section::before {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 530.34px;
+  left: -341.1px;
+  top: 142.88px;
+  background: #2053ac;
+  border-radius: 9999px;
+  filter: blur(62px);
+  transform: rotate(40.03deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bottom-hero2-section::after {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 879.46px;
+  left: 1151.49px;
+  top: 162.67px;
+  background: #2053ac;
+  border-radius: 9999px;
+  filter: blur(167px);
+  transform: rotate(40.03deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bottom-hero2-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .bottom-hero2-card {
@@ -666,7 +743,8 @@ html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 0;
-  padding: 0 0 0 113px;
+  padding-left: clamp(24px, 6.73vw, 113px);
+  padding-right: clamp(20px, 3.5vw, 31px);
   position: relative;
 }
 
@@ -678,7 +756,7 @@ html {
   opacity: 0.75;
   pointer-events: none;
   z-index: 0;
-  height: 800px;
+  height: 100%;
 }
 
 .bottom-hero2-card > * {
@@ -690,7 +768,7 @@ html {
   display: flex;
   flex-direction: column;
   max-width: 672px;
-  margin-top: clamp(28px, 4.2vw, 54px);
+  margin-top: clamp(28px, 4.2vw, 102px);
   letter-spacing: -3px;
 }
 
@@ -769,8 +847,8 @@ html {
   margin-top: clamp(24px, 4.4vw, 75px);
   margin-left: clamp(0px, 4.2vw, 71px);
   position: relative;
-  bottom: 10px;
-  left: -28px;
+  bottom: -30px;
+  left: -10px;
 }
 
 /* Audience / Frame 14 */
@@ -792,17 +870,18 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 0;
-  gap: 34px;
+  gap: clamp(24px, 2.02vw, 34px);
   isolation: isolate;
   width: 100%;
-  min-height: 824px;
+  min-height: clamp(560px, 49vw, 824px);
   position: relative;
   z-index: 2;
 }
 
 .audience-left {
-  flex: 0 0 677px;
-  width: 677px;
+  flex: 0 1 677px;
+  width: 100%;
+  max-width: 677px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -814,7 +893,8 @@ html {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  width: 677px;
+  width: 100%;
+  max-width: 677px;
 }
 
 .audience-h2 {
@@ -822,7 +902,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(40px, 3.8vw, 64px);
   line-height: 100%;
   letter-spacing: -3px;
   color: var(--fg);
@@ -833,13 +913,14 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: #e7e7e4;
 }
 
 .audience-image {
-  width: 677px;
+  width: 100%;
+  max-width: 677px;
   height: auto;
   object-fit: contain;
   pointer-events: none;
@@ -847,13 +928,12 @@ html {
 }
 
 .audience-grid {
-  flex: 0 0 967px;
-  width: 967px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
+  flex: 1 1 967px;
+  width: 100%;
+  max-width: 967px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
   gap: 24px;
   margin: 0;
   z-index: 3;
@@ -861,12 +941,13 @@ html {
 
 /* Cards look like adv-card, but size is per Frame 14 */
 .audience-grid .audience-card {
-  width: 470.8px;
-  height: 400px;
+  width: 100%;
+  height: auto;
+  min-height: clamp(260px, 23.8vw, 400px);
 }
 
 .audience-grid .adv-text {
-  max-width: 422.8px;
+  max-width: 100%;
 }
 
 /* FAQ / Frame 15 */
@@ -883,7 +964,7 @@ html {
   width: 1306.93px;
   height: 1306.93px;
   left: -339.63px;
-  top: -520px;
+  top: -920px;
   background: url(img/faq.png) center / contain no-repeat;
   pointer-events: none;
   z-index: 0;
@@ -929,7 +1010,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(40px, 3.8vw, 64px);
   line-height: 100%;
   letter-spacing: -1px;
   color: var(--fg);
@@ -941,7 +1022,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: #e7e7e4;
 }
@@ -976,7 +1057,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: var(--fg);
   letter-spacing: -1px;
@@ -1110,7 +1191,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 100%;
   letter-spacing: -1px;
   font-feature-settings:
@@ -1127,7 +1208,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(28px, 2.85vw, 48px);
   line-height: 110%;
   letter-spacing: -2.8px;
   font-feature-settings:
@@ -1188,7 +1269,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(40px, 3.8vw, 64px);
   line-height: 100%;
   letter-spacing: -3px;
   color: var(--fg);
@@ -1199,7 +1280,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: #e7e7e4;
 }
@@ -1310,7 +1391,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(28px, 2.85vw, 48px);
   line-height: 110%;
   letter-spacing: -3px;
   font-feature-settings:
@@ -1336,6 +1417,218 @@ html {
 .steps-section {
   background: #2f2f2f;
   margin-top: 18px;
+}
+
+/* Contact panel (replaces Frame 17) — decorative block under steps-section */
+.contact-panel-section {
+  position: relative;
+  padding: 0 clamp(16px, 7.14vw, 120px);
+  margin-top: clamp(48px, 5vw, 95px);
+  width: 100%;
+  isolation: isolate;
+}
+
+.contact-panel {
+  max-width: 1680px;
+  margin: 0 auto;
+  height: auto;
+  min-height: clamp(520px, 36vw, 700px);
+  border-radius: 32px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  padding: clamp(20px, 3.6vw, 60px);
+}
+
+/* Panel background artwork at 50% opacity */
+.contact-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url(img/Subtract_2.png) center / 100% 100% no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative form artwork moved to the form so it stays centered behind it */
+.contact-panel::before {
+  content: none;
+}
+
+/* Decorative ellipses (kept as pseudo-elements for the section) */
+.contact-panel-section::before {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 530.34px;
+  left: -380.55px;
+  top: 89.14px;
+  background: #2053ac;
+  filter: blur(62px);
+  transform: rotate(-45.85deg);
+  border-radius: 40%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-panel-section::after {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 329.46px;
+  left: 1383.2px;
+  top: 219.96px;
+  background: #2053ac;
+  filter: blur(167px);
+  transform: rotate(40.03deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-panel__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: clamp(20px, 2.4vw, 32px);
+  position: relative;
+  z-index: 2;
+}
+
+.contact-panel__left {
+  flex: 1 1 clamp(320px, 34vw, 545px);
+  max-width: 545px;
+  padding-left: 0;
+}
+
+.contact-panel__title {
+  font-family: "Muller", "Inter", sans-serif;
+  font-size: clamp(36px, 3.8vw, 72px);
+  line-height: 90%;
+  color: var(--fg);
+  margin: 0 0 16px 0;
+}
+
+.contact-panel__copy {
+  font-size: var(--fs-body);
+  color: var(--fg);
+  margin: 0;
+}
+
+/* Contact form (replaces Frame 18) */
+.contact-form {
+  box-sizing: border-box;
+  flex: 1 1 560px;
+  width: min(666px, 100%);
+  max-width: 666px;
+  height: auto;
+  min-height: clamp(420px, 30vw, 564px);
+  border-radius: 16px;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+
+  /* Decorative form artwork tuning (responsive) */
+  --form-art-w: clamp(520px, 48vw, 816px);
+  --form-art-opacity: 1;
+  --form-art-scale: 1;
+  --form-art-x: 0px;
+  --form-art-y: 0px;
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  width: var(--form-art-w);
+  aspect-ratio: 816 / 1185;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+    translate(var(--form-art-x), var(--form-art-y)) scale(var(--form-art-scale));
+  background: url(img/form_bg.png) center / contain no-repeat;
+  opacity: var(--form-art-opacity);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.contact-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-height: inherit;
+  padding: clamp(20px, 3.2vw, 64px);
+  border-radius: inherit;
+  background: rgba(8, 21, 43, 0.78);
+  border: 1px solid rgba(242, 242, 242, 0.08);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+/* Background moved to pseudo-element so it doesn't interfere with layout */
+.contact-form__form {
+  position: relative;
+  z-index: 3;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: clamp(48px, 4.2vw, 56px);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #4f4f4f;
+  background: #f2f2f2;
+  font-size: var(--fs-small);
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 140%;
+  color: #2f2f2f;
+}
+
+.contact-form__textarea {
+  height: clamp(120px, 10vw, 132px);
+  resize: none;
+}
+
+.contact-form__btn {
+  width: min(274px, 100%);
+  height: clamp(60px, 5vw, 72px);
+  padding: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2053ac;
+  border-radius: 16px;
+  border: 0;
+  cursor: pointer;
+  align-self: flex-start;
+  font-family: "Muller", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.4vw, 24px);
+  line-height: 24px;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+  color: #f2f2f2;
 }
 
 .steps-section .container {
@@ -1365,7 +1658,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(40px, 3.8vw, 64px);
   line-height: 100%;
   letter-spacing: -3px;
   color: var(--fg);
@@ -1376,7 +1669,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: #e7e7e4;
 }
@@ -1482,6 +1775,7 @@ html {
   border-radius: 16px;
   border: 0;
   cursor: pointer;
+  z-index: 999;
 }
 
 .steps-cta-text {
@@ -1529,7 +1823,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: clamp(40px, 3.8vw, 64px);
   line-height: 100%;
   letter-spacing: -1px;
   color: var(--fg);
@@ -1541,7 +1835,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 120%;
   color: #e7e7e4;
 }
@@ -1581,6 +1875,7 @@ html {
   position: relative;
   min-height: 463px;
   touch-action: pan-y;
+  z-index: -9;
 }
 
 .reviews-scroll {
@@ -1736,7 +2031,7 @@ html {
   font-family: "Muller", "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: clamp(18px, 1.9vw, 32px);
   line-height: 100%;
   letter-spacing: -1px;
   font-feature-settings:
@@ -1829,7 +2124,7 @@ html {
 .controls {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 0;
 }
 
 .icon-btn {
@@ -1852,7 +2147,7 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 85px; /* from spec */
+  width: 77px; /* from spec */
   height: 40px; /* from spec */
   border-radius: 16px;
   background: transparent;
