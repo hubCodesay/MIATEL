@@ -1307,7 +1307,7 @@
   .about {
     width: 100%;
     min-height: auto;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: flex-start;
     padding: 0 16px;
   }
