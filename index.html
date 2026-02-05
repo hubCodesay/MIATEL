@@ -635,7 +635,27 @@
                 <button
                   class="contact-form__btn"
                   type="submit">
-                  Получить расчёт
+                  <span>Получить расчёт</span>
+                  <svg
+                    class="contact-form__btn-arrow"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden>
+                    <path
+                      d="M5 12H19"
+                      stroke="#F2F2F2"
+                      stroke-width="2"
+                      stroke-linecap="round" />
+                    <path
+                      d="M13 6L19 12L13 18"
+                      stroke="#F2F2F2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
                 </button>
               </form>
             </div>
@@ -820,10 +840,15 @@
             </div>
 
             <div class="bottom-hero-visual">
-              <img
-                src="img/person_2.png"
-                alt="Персонаж"
-                class="bottom-hero-image" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="img/mob.png" />
+                <img
+                  src="img/person_2.png"
+                  alt="Персонаж"
+                  class="bottom-hero-image" />
+              </picture>
             </div>
           </div>
         </div>
@@ -1257,14 +1282,42 @@
                       stroke-linejoin="round" />
                   </svg>
                 </button>
+
+                <div class="bottom-hero2-telegram">
+                  <button class="bottom-hero2-btn bottom-hero2-ghost">
+                    Написать в Telegram
+                  </button>
+                  <button
+                    class="bottom-hero2-btn bottom-hero2-circle"
+                    aria-label="Telegram">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden>
+                      <path
+                        d="M21 4L3 11L9 13L11 20L15 15L20 18L21 4Z"
+                        stroke="#F2F2F2"
+                        stroke-width="2"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="bottom-hero2-visual">
-              <img
-                src="img/girl.png"
-                alt="Персонаж"
-                class="bottom-hero2-image" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="img/girl_mob.png" />
+                <img
+                  src="img/girl.png"
+                  alt="Персонаж"
+                  class="bottom-hero2-image" />
+              </picture>
             </div>
           </div>
         </div>

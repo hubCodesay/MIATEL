@@ -41,6 +41,45 @@
     window.addEventListener("resize", schedule);
     // Initial
     updateStepsScroll();
+
+    // Make the indicator a working scrollbar (click/drag)
+    const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+    const setStepsScrollFromClientX = (clientX) => {
+      const trackRect = stepsScroll.getBoundingClientRect();
+      const track = trackRect.width;
+      if (!track) return;
+
+      const scrollWidth = stepsGrid.scrollWidth;
+      const clientWidth = stepsGrid.clientWidth;
+      const maxScroll = Math.max(0, scrollWidth - clientWidth);
+      if (!maxScroll) return;
+
+      const x = clamp(clientX - trackRect.left, 0, track);
+      const ratio = x / track;
+      stepsGrid.scrollLeft = ratio * maxScroll;
+    };
+
+    let isDraggingSteps = false;
+
+    stepsScroll.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      isDraggingSteps = true;
+      stepsScroll.setPointerCapture?.(e.pointerId);
+      setStepsScrollFromClientX(e.clientX);
+    });
+
+    stepsScroll.addEventListener("pointermove", (e) => {
+      if (!isDraggingSteps) return;
+      setStepsScrollFromClientX(e.clientX);
+    });
+
+    const stopStepsDrag = () => {
+      isDraggingSteps = false;
+    };
+
+    stepsScroll.addEventListener("pointerup", stopStepsDrag);
+    stepsScroll.addEventListener("pointercancel", stopStepsDrag);
   }
 
   const section = document.querySelector(".reviews-section");
@@ -197,19 +236,64 @@
     }
   });
 
-  // Swipe support (touch + mouse drag)
+  // Trackpad / mouse wheel support (scroll to navigate)
+  let wheelAccum = 0;
+  let wheelCooldown = 0;
+
+  const onWheel = (e) => {
+    // If user is trying to scroll vertically the page, don't hijack.
+    const absX = Math.abs(e.deltaX);
+    const absY = Math.abs(e.deltaY);
+    const horizontalIntent = absX > absY || e.shiftKey;
+    if (!horizontalIntent) return;
+
+    // Prevent horizontal page scroll and treat as slider intent.
+    e.preventDefault();
+
+    if (wheelCooldown) return;
+
+    const delta = absX > absY ? e.deltaX : e.deltaY;
+    wheelAccum += delta;
+
+    const threshold = 44;
+    if (wheelAccum > threshold) {
+      wheelAccum = 0;
+      goNext();
+      wheelCooldown = window.setTimeout(() => {
+        wheelCooldown = 0;
+      }, 240);
+    }
+    if (wheelAccum < -threshold) {
+      wheelAccum = 0;
+      goPrev();
+      wheelCooldown = window.setTimeout(() => {
+        wheelCooldown = 0;
+      }, 240);
+    }
+  };
+
+  // Must be non-passive to call preventDefault
+  carousel.addEventListener("wheel", onWheel, { passive: false });
+
+  // Swipe support (touch + mouse drag) on the whole carousel
   let pointerDown = false;
   let startX = 0;
   let startY = 0;
 
+  const isFromNav = (target) => {
+    const el = target instanceof Element ? target : null;
+    return Boolean(el?.closest?.(".reviews-nav"));
+  };
+
   const onPointerDown = (e) => {
     // Only left click for mouse
     if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (isFromNav(e.target)) return;
 
     pointerDown = true;
     startX = e.clientX;
     startY = e.clientY;
-    cardsWrap.setPointerCapture?.(e.pointerId);
+    carousel.setPointerCapture?.(e.pointerId);
   };
 
   const onPointerUp = (e) => {
@@ -227,9 +311,9 @@
     if (dx < -threshold) goNext();
   };
 
-  cardsWrap.addEventListener("pointerdown", onPointerDown);
-  cardsWrap.addEventListener("pointerup", onPointerUp);
-  cardsWrap.addEventListener("pointercancel", () => {
+  carousel.addEventListener("pointerdown", onPointerDown);
+  carousel.addEventListener("pointerup", onPointerUp);
+  carousel.addEventListener("pointercancel", () => {
     pointerDown = false;
   });
 
@@ -237,9 +321,10 @@
   let touchStartX = 0;
   let touchStartY = 0;
 
-  cardsWrap.addEventListener(
+  carousel.addEventListener(
     "touchstart",
     (e) => {
+      if (isFromNav(e.target)) return;
       const t = e.touches?.[0];
       if (!t) return;
       touchStartX = t.clientX;
@@ -248,7 +333,59 @@
     { passive: true },
   );
 
-  cardsWrap.addEventListener(
+  // Make the progress bar a working scrollbar (click/drag)
+  if (scroll) {
+    const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+    const indexFromClientX = (clientX) => {
+      const rect = scroll.getBoundingClientRect();
+      const w = rect.width;
+      if (!w) return activeIndex;
+
+      const x = clamp(clientX - rect.left, 0, w);
+      const ratio = x / w;
+      const maxIndex = Math.max(0, cards.length - 1);
+      return Math.round(ratio * maxIndex);
+    };
+
+    let isDragging = false;
+    let didDrag = false;
+    let dragStartX = 0;
+
+    scroll.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      isDragging = true;
+      didDrag = false;
+      dragStartX = e.clientX;
+      scroll.setPointerCapture?.(e.pointerId);
+      setStateInstant(indexFromClientX(e.clientX));
+    });
+
+    scroll.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      if (Math.abs(e.clientX - dragStartX) > 6) didDrag = true;
+      setStateInstant(indexFromClientX(e.clientX));
+    });
+
+    const stop = () => {
+      isDragging = false;
+    };
+    scroll.addEventListener("pointerup", stop);
+    scroll.addEventListener("pointercancel", stop);
+
+    scroll.addEventListener("click", (e) => {
+      // Click (without drag): animate to nearest index
+      if (didDrag) {
+        didDrag = false;
+        return;
+      }
+      const next = indexFromClientX(e.clientX);
+      if (next === activeIndex) return;
+      transitionTo(next, next > activeIndex ? "next" : "prev");
+    });
+  }
+
+  carousel.addEventListener(
     "touchend",
     (e) => {
       const t = e.changedTouches?.[0];

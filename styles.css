@@ -83,12 +83,25 @@ input[type="search"] {
     "Muller", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 
+  --ff-heading:
+    "Muller", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
   /* Fluid typography scale */
   --fs-h2: clamp(40px, 3.8vw, 64px);
   --fs-h3: clamp(28px, 2.85vw, 48px);
   --fs-title: clamp(18px, 1.9vw, 32px);
   --fs-body: clamp(16px, 1.2vw, 20px);
   --fs-small: clamp(14px, 1vw, 16px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
 }
 
 body {
@@ -114,6 +127,7 @@ html,
 body {
   scroll-behavior: smooth;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .hero-section {
@@ -830,6 +844,10 @@ body {
   font-feature-settings:
     "pnum" on,
     "lnum" on;
+}
+
+.bottom-hero2-telegram {
+  display: none;
 }
 
 .bottom-hero2-visual {
@@ -1631,6 +1649,12 @@ body {
   color: #f2f2f2;
 }
 
+.contact-form__btn-arrow {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
 .steps-section .container {
   padding: 0;
 }
@@ -1688,6 +1712,10 @@ body {
   background: #dcdcdc;
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
 }
 
 .steps-scroll::before {
@@ -1849,6 +1877,7 @@ body {
   min-width: 0;
   width: min(816px, 100%);
   justify-content: end;
+  touch-action: pan-y;
 }
 
 .reviews-nav {
@@ -1885,6 +1914,10 @@ body {
   background: #dcdcdc;
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
 }
 
 .reviews-scroll::before {
