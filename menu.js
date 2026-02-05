@@ -67,6 +67,9 @@
       display: "flex",
       flexDirection: "column",
       gap: "16px",
+      overflowY: "auto",
+      overflowX: "hidden",
+      WebkitOverflowScrolling: "touch",
       transform: "translateX(20px)",
       opacity: "0",
     });
