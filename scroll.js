@@ -224,11 +224,157 @@
       );
     };
 
+    const setupScrollReveal = () => {
+      if (prefersReducedMotion) return;
+
+      const sectionSelector =
+        "section#hero, section#about, section#advantages, section#steps, section#contact, section#reviews, section#offer, section#audience, section#faq, section#cta";
+
+      const revealSelector = [
+        // Titles / copy / action groups
+        ".hero-content > *",
+        ".about-content > *",
+        ".advantages-title > *",
+        ".steps-title > *",
+        ".contact-panel__left > *",
+        ".reviews-title > *",
+        ".audience-title > *",
+        ".faq-title > *",
+        ".bottom-hero-content > *",
+        ".bottom-hero2-content > *",
+
+        // Cards / lists
+        ".adv-card",
+        ".step-card",
+        ".review-card",
+        ".faq-item",
+        ".contact-panel__form > *",
+      ].join(",");
+
+      const sections = Array.from(document.querySelectorAll(sectionSelector));
+      const allTargets = new Set();
+
+      for (const section of sections) {
+        const targets = Array.from(section.querySelectorAll(revealSelector));
+        for (const t of targets) {
+          if (!(t instanceof HTMLElement)) continue;
+
+          // Skip elements that are inside hidden FAQ panels.
+          if (t.closest(".faq-panel")?.hasAttribute?.("hidden")) continue;
+
+          // Avoid animating SVG/IMG directly; parent blocks already animate.
+          const tag = t.tagName.toLowerCase();
+          if (tag === "svg" || tag === "img" || tag === "source" || tag === "picture") continue;
+
+          allTargets.add(t);
+        }
+      }
+
+      const isBelowFold = (el) => {
+        const r = el.getBoundingClientRect();
+        return r.top > window.innerHeight * 1.05;
+      };
+
+      for (const el of allTargets) {
+        if (el.dataset.revealPrepared === "1") continue;
+        el.dataset.revealPrepared = "1";
+
+        // Hide only if it starts below the fold to prevent visible flicker.
+        if (isBelowFold(el)) {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(14px)";
+        }
+      }
+
+      const sectionOrder = new Map();
+      const nextIndexForSection = (section) => {
+        const current = sectionOrder.get(section) ?? 0;
+        sectionOrder.set(section, current + 1);
+        return current;
+      };
+
+      const reveal = (el) => {
+        if (!(el instanceof HTMLElement)) return;
+        if (el.dataset.revealed === "1") return;
+        el.dataset.revealed = "1";
+
+        const section = el.closest("section");
+        const idx = section ? nextIndexForSection(section) : 0;
+        const delay = Math.min(600, idx * 70);
+
+        el.style.willChange = "opacity, transform";
+
+        try {
+          el.animate(
+            [
+              { opacity: 0, transform: "translateY(14px)" },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              duration: 520,
+              easing: "cubic-bezier(0.2, 0.7, 0.2, 1)",
+              delay,
+              fill: "forwards",
+            },
+          );
+        } catch {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }
+
+        window.setTimeout(() => {
+          el.style.willChange = "";
+        }, delay + 700);
+      };
+
+      // Use IO when available
+      const io =
+        "IntersectionObserver" in window
+          ? new IntersectionObserver(
+              (entries) => {
+                for (const entry of entries) {
+                  if (!entry.isIntersecting) continue;
+                  reveal(entry.target);
+                  io.unobserve(entry.target);
+                }
+              },
+              { root: null, threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+            )
+          : null;
+
+      for (const el of allTargets) {
+        if (io) {
+          io.observe(el);
+        } else {
+          // Fallback: just show everything.
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }
+      }
+
+      // If FAQ opens items later, reveal newly visible answers.
+      document.addEventListener("click", (e) => {
+        const t = e.target instanceof Element ? e.target : null;
+        const trigger = t?.closest?.(".faq-trigger");
+        if (!trigger) return;
+        window.setTimeout(() => {
+          const panelId = trigger.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+          const items = Array.from(panel.querySelectorAll("*"));
+          for (const item of items) {
+            if (item instanceof HTMLElement) reveal(item);
+          }
+        }, 0);
+      });
+    };
+
     enhanceHoverForButtons();
     setupHeroScroll();
     setupAnchors();
     setupTopButton();
     setupSmoothWheel();
+    setupScrollReveal();
   };
 
   if (document.readyState === "loading") {
