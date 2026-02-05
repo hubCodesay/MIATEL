@@ -900,6 +900,9 @@
   body {
     overflow-x: hidden;
   }
+  .hero-card::before {
+    background: transparent;
+  }
   .header-container {
     max-width: 430px;
     padding-left: 16px;
@@ -1624,7 +1627,7 @@
 
   /* Frame 17 ellipses */
   .contact-panel-section::before {
-    width: 791.5px;
+    width: 449.5px;
     height: 354px;
     left: -234px;
     top: 24px;
@@ -1804,7 +1807,7 @@
     padding: 32px 10px 24px;
     border-radius: 20px;
 
-    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+    background: transparent;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     box-shadow: none;
@@ -1819,8 +1822,8 @@
   }
 
   .bottom-hero-card::before {
-    height: 858.83px;
-    opacity: 0.5;
+    height: 519.83px;
+    opacity: 0.3;
   }
 
   .bottom-hero-content {
@@ -2829,7 +2832,7 @@
     padding: 32px 10px 24px;
     border-radius: 20px;
 
-    background: url("img/hero-card-bg-mobile.svg") center / 100% 100% no-repeat;
+    background: transparent;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     box-shadow: none;
