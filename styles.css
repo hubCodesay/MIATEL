@@ -132,9 +132,44 @@ body {
 
 .hero-section {
   padding: 0 0 80px;
+  position: relative;
+}
+
+/* Ellipse 1 (left-side decorative background for hero-section) */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 1185.77px;
+  height: 530.34px;
+  left: -341.1px;
+  top: 147.33px;
+  background: #2053ac;
+  filter: blur(62px);
+  transform: rotate(40.03deg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -9;
+}
+
+/* Ellipse 2 (right-side decorative background for hero-section) */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  width: 1667.46px;
+  height: 745.77px;
+  left: 658.47px;
+  top: 132.48px;
+  background: #2053ac;
+  filter: blur(167px);
+  transform: rotate(40.03deg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -9;
 }
 .hero-section .container {
   padding: 0;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-card {

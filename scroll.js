@@ -88,7 +88,9 @@
 
         el.addEventListener("mouseenter", () => {
           if (prefersReducedMotion) return;
-          el.style.filter = prevFilter ? `${prevFilter} brightness(1.08)` : "brightness(1.08)";
+          el.style.filter = prevFilter
+            ? `${prevFilter} brightness(1.08)`
+            : "brightness(1.08)";
           playHoverAnim(el);
         });
 
@@ -264,7 +266,13 @@
 
           // Avoid animating SVG/IMG directly; parent blocks already animate.
           const tag = t.tagName.toLowerCase();
-          if (tag === "svg" || tag === "img" || tag === "source" || tag === "picture") continue;
+          if (
+            tag === "svg" ||
+            tag === "img" ||
+            tag === "source" ||
+            tag === "picture"
+          )
+            continue;
 
           allTargets.add(t);
         }

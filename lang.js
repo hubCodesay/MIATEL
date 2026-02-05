@@ -138,7 +138,10 @@
       let left = rect.right - menu.offsetWidth;
 
       // Clamp inside viewport
-      left = Math.max(8, Math.min(left, window.innerWidth - menu.offsetWidth - 8));
+      left = Math.max(
+        8,
+        Math.min(left, window.innerWidth - menu.offsetWidth - 8),
+      );
 
       menu.style.top = `${Math.round(top)}px`;
       menu.style.left = `${Math.round(left)}px`;
@@ -149,7 +152,9 @@
       for (const b of optionButtons) {
         const selected = b.dataset.langValue === v;
         b.setAttribute("aria-selected", String(selected));
-        b.style.background = selected ? "rgba(242,242,242,0.10)" : "transparent";
+        b.style.background = selected
+          ? "rgba(242,242,242,0.10)"
+          : "transparent";
       }
     };
 
@@ -166,9 +171,7 @@
       const current = getStored();
       setSelectedUI(current);
 
-      const active = optionButtons.find(
-        (b) => b.dataset.langValue === current,
-      );
+      const active = optionButtons.find((b) => b.dataset.langValue === current);
       (active || optionButtons[0])?.focus?.();
     };
 
@@ -243,7 +246,8 @@
 
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        const next = optionButtons[Math.min(optionButtons.length - 1, currentIndex + 1)];
+        const next =
+          optionButtons[Math.min(optionButtons.length - 1, currentIndex + 1)];
         next?.focus?.();
       }
 

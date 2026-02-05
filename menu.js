@@ -243,9 +243,12 @@
       toggleBtn.setAttribute("aria-expanded", "false");
       animateClose();
       unlockScroll();
-      window.setTimeout(() => {
-        if (!openState) overlay.style.display = "none";
-      }, prefersReducedMotion ? 0 : 170);
+      window.setTimeout(
+        () => {
+          if (!openState) overlay.style.display = "none";
+        },
+        prefersReducedMotion ? 0 : 170,
+      );
       if (lastFocus && typeof lastFocus.focus === "function") {
         lastFocus.focus();
       } else {
