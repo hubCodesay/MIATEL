@@ -992,7 +992,7 @@
     width: 100%;
     max-width: 700px;
     flex: 0 0 auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
 
@@ -1001,6 +1001,7 @@
     height: auto;
     min-height: 160px;
     border-radius: 14px;
+    padding: 10px 10px 20px 10px;
   }
 
   /* FAQ / Frame 15 (768→431 uses mobile layout) */
@@ -1285,7 +1286,7 @@
   .hero-card {
     width: 700px;
     max-width: 700px;
-    background: url(img/hero-card-bg-mobile.svg) center / 100% 100% no-repeat;
+    background: #2c2c2c5e;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1362,11 +1363,11 @@
   }
 
   .hero-image {
-    width: 551px;
+    width: 671px;
     max-width: none;
     transform: none;
     margin-top: 16px;
-    margin-left: -96px;
+    margin-left: 13px;
   }
 
   .hero-scroll {
@@ -1374,11 +1375,12 @@
     margin-top: auto;
     width: 72px;
     height: 72px;
-    bottom: -52px;
+    bottom: -40px;
     border-radius: 14px;
     background: var(--muted);
-    right: 121px;
+    right: 50%;
     align-self: flex-start;
+    transform: translateX(50%);
   }
 
   .about-section {
@@ -1462,7 +1464,7 @@
   }
 
   .advantages-grid {
-    flex-direction: column;
+    flex-direction: row;
     gap: 32px;
     justify-content: flex-start;
   }
@@ -1475,7 +1477,7 @@
   }
 
   .adv-col {
-    width: 100%;
+    width: 50%;
     flex: 0 0 auto;
     gap: 36px;
   }
@@ -1485,7 +1487,7 @@
   }
 
   .adv-card {
-    min-height: 198px;
+    height: 198px;
     padding: 8px;
     gap: 12px;
     border-radius: 14px;
@@ -1767,7 +1769,7 @@
 
   /* Bottom hero / Frame 13 (433–768) */
   .bottom-hero-section {
-    padding: 0 0 24px;
+    padding: 50px 0 24px;
   }
 
   .bottom-hero-section::before {
