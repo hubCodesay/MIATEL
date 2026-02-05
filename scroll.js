@@ -282,7 +282,7 @@
         // Hide only if it starts below the fold to prevent visible flicker.
         if (isBelowFold(el)) {
           el.style.opacity = "0";
-          el.style.transform = "translateY(14px)";
+          el.style.transform = "translateY(10px) scale(0.99)";
         }
       }
 
@@ -300,26 +300,26 @@
 
         const section = el.closest("section");
         const idx = section ? nextIndexForSection(section) : 0;
-        const delay = Math.min(600, idx * 70);
+        const delay = Math.min(650, idx * 80);
 
         el.style.willChange = "opacity, transform";
 
         try {
           el.animate(
             [
-              { opacity: 0, transform: "translateY(14px)" },
-              { opacity: 1, transform: "translateY(0)" },
+              { opacity: 0, transform: "translateY(10px) scale(0.99)" },
+              { opacity: 1, transform: "translateY(0) scale(1)" },
             ],
             {
-              duration: 520,
-              easing: "cubic-bezier(0.2, 0.7, 0.2, 1)",
+              duration: 720,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
               delay,
               fill: "forwards",
             },
           );
         } catch {
           el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
+          el.style.transform = "translateY(0) scale(1)";
         }
 
         window.setTimeout(() => {
