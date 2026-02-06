@@ -136,7 +136,7 @@
 
   const setStateInstant = (nextIndex) => {
     activeIndex = mod(nextIndex, cards.length);
-    const backIndex = mod(activeIndex - 1, cards.length);
+    const backIndex = mod(activeIndex + 1, cards.length);
 
     for (let i = 0; i < cards.length; i += 1) {
       const card = cards[i];
@@ -193,7 +193,7 @@
       clearAnimClasses(entering);
 
       activeIndex = toIndex;
-      const backIndex = fromIndex;
+      const backIndex = mod(activeIndex + 1, cards.length);
 
       for (let i = 0; i < cards.length; i += 1) {
         const card = cards[i];

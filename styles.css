@@ -1664,7 +1664,7 @@ body {
 .contact-form__btn {
   width: min(274px, 100%);
   height: clamp(60px, 5vw, 72px);
-  padding: 24px;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1939,7 +1939,12 @@ body {
   position: relative;
   min-height: 463px;
   touch-action: pan-y;
-  z-index: -9;
+  z-index: 0;
+  overflow: visible;
+}
+
+.reviews-nav {
+  z-index: 1; /* keep nav under cards so peek is visible */
 }
 
 .reviews-scroll {
@@ -1986,6 +1991,10 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px) scale(0.985);
+  z-index: 0;
+  transform-origin: left center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
   transition:
     transform 260ms ease,
     opacity 200ms ease,
@@ -1996,15 +2005,19 @@ body {
   opacity: 1;
   pointer-events: auto;
   transform: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .review-card.is-back {
-  opacity: 1;
+  opacity: 1 !important;
   pointer-events: none;
   background: #202020;
-  transform: translateX(7px) translateY(-9px) rotate(4.55deg);
+  /* shift right so the card peeks from behind the active card and stay rotated */
+  transform: translateX(-20px) translateY(-47px) scale(0.96) rotate(5deg) !important;
+  transform-origin: left center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
   z-index: 1;
+  filter: brightness(0.94);
 }
 
 .review-card.is-entering-next {
