@@ -771,7 +771,7 @@ body {
   background: #2053ac;
   border-radius: 9999px;
   filter: blur(167px);
-  transform: rotate(40.03deg);
+  transform: rotate(20.03deg);
   pointer-events: none;
   z-index: 0;
 }
